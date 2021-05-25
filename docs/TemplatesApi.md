@@ -189,7 +189,7 @@ my $api_instance = ElasticEmail::TemplatesApi->new(
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
 
-my $scope_type = [(new ElasticEmail.TemplateScopeType())]; # ARRAY[TemplateScopeType] | Return templates with specified scope only
+my $scope_type = [(new ElasticEmail.TemplateScope())]; # ARRAY[TemplateScope] | Return templates with specified scope only
 my $template_types = [(new ElasticEmail.TemplateType())]; # ARRAY[TemplateType] | Return templates with specified type only
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
@@ -207,7 +207,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scope_type** | [**ARRAY[TemplateScopeType]**](TemplateScopeType.md)| Return templates with specified scope only | 
+ **scope_type** | [**ARRAY[TemplateScope]**](TemplateScope.md)| Return templates with specified scope only | 
  **template_types** | [**ARRAY[TemplateType]**](TemplateType.md)| Return templates with specified type only | [optional] 
  **limit** | **int**| Maximum number of returned items. | [optional] 
  **offset** | **int**| How many items should be returned ahead. | [optional] 
