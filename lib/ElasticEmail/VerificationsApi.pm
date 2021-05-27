@@ -465,9 +465,72 @@ sub verifications_files_by_id_result_get {
 }
 
 #
+# verifications_files_by_id_verification_post
+#
+# Start verification
+# 
+# @param string $id File ID to start verification (required)
+{
+    my $params = {
+    'id' => {
+        data_type => 'string',
+        description => 'File ID to start verification',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_verification_post' } = { 
+        summary => 'Start verification',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub verifications_files_by_id_verification_post {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'id' is set
+    unless (exists $args{'id'}) {
+      croak("Missing the required parameter 'id' when calling verifications_files_by_id_verification_post");
+    }
+
+    # parse inputs
+    my $_resource_path = '/verifications/files/{id}/verification';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept();
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'id'}) {
+        my $_base_variable = "{" . "id" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'id'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
+#
 # verifications_files_post
 #
-# Verify From File
+# Upload File with Emails
 # 
 # @param string $file  (optional)
 {
@@ -479,7 +542,7 @@ sub verifications_files_by_id_result_get {
     },
     };
     __PACKAGE__->method_documentation->{ 'verifications_files_post' } = { 
-        summary => 'Verify From File',
+        summary => 'Upload File with Emails',
         params => $params,
         returns => 'VerificationFileResult',
         };
@@ -528,13 +591,13 @@ sub verifications_files_post {
 #
 # verifications_files_result_get
 #
-# Get Simple Files Verification Results
+# Get Files Verification Results
 # 
 {
     my $params = {
     };
     __PACKAGE__->method_documentation->{ 'verifications_files_result_get' } = { 
-        summary => 'Get Simple Files Verification Results',
+        summary => 'Get Files Verification Results',
         params => $params,
         returns => 'ARRAY[VerificationFileResult]',
         };

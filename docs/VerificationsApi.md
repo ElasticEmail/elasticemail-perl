@@ -15,8 +15,9 @@ Method | HTTP request | Description
 [**verifications_files_by_id_delete**](VerificationsApi.md#verifications_files_by_id_delete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
 [**verifications_files_by_id_result_download_get**](VerificationsApi.md#verifications_files_by_id_result_download_get) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
 [**verifications_files_by_id_result_get**](VerificationsApi.md#verifications_files_by_id_result_get) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-[**verifications_files_post**](VerificationsApi.md#verifications_files_post) | **POST** /verifications/files | Verify From File
-[**verifications_files_result_get**](VerificationsApi.md#verifications_files_result_get) | **GET** /verifications/files/result | Get Simple Files Verification Results
+[**verifications_files_by_id_verification_post**](VerificationsApi.md#verifications_files_by_id_verification_post) | **POST** /verifications/files/{id}/verification | Start verification
+[**verifications_files_post**](VerificationsApi.md#verifications_files_post) | **POST** /verifications/files | Upload File with Emails
+[**verifications_files_result_get**](VerificationsApi.md#verifications_files_result_get) | **GET** /verifications/files/result | Get Files Verification Results
 [**verifications_get**](VerificationsApi.md#verifications_get) | **GET** /verifications | Get Emails Verification Results
 
 
@@ -328,12 +329,62 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **verifications_files_by_id_verification_post**
+> verifications_files_by_id_verification_post(id => $id)
+
+Start verification
+
+Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+
+### Example 
+```perl
+use Data::Dumper;
+use ElasticEmail::VerificationsApi;
+my $api_instance = ElasticEmail::VerificationsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $id = "id_example"; # string | File ID to start verification
+
+eval { 
+    $api_instance->verifications_files_by_id_verification_post(id => $id);
+};
+if ($@) {
+    warn "Exception when calling VerificationsApi->verifications_files_by_id_verification_post: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**| File ID to start verification | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **verifications_files_post**
 > VerificationFileResult verifications_files_post(file => $file)
 
-Verify From File
+Upload File with Emails
 
-Uploads a CSV file with list of emails to verify. An 'email' column is required. Required Access Level: VerifyEmails
+Uploads a CSV file with list of emails that can then be triggered for verification. An 'email' column is required. Required Access Level: VerifyEmails
 
 ### Example 
 ```perl
@@ -382,7 +433,7 @@ Name | Type | Description  | Notes
 # **verifications_files_result_get**
 > ARRAY[VerificationFileResult] verifications_files_result_get()
 
-Get Simple Files Verification Results
+Get Files Verification Results
 
 Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
 
