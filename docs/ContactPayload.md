@@ -8,7 +8,7 @@ use ElasticEmail::Object::ContactPayload;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**email** | **string** | Proper email address. | [optional] 
+**email** | **string** | Proper email address. | 
 **status** | [**ContactStatus**](ContactStatus.md) | Status of the given resource | [optional] 
 **first_name** | **string** | First name. | [optional] 
 **last_name** | **string** | Last name. | [optional] 

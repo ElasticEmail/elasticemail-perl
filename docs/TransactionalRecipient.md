@@ -8,7 +8,7 @@ use ElasticEmail::Object::TransactionalRecipient;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**to** | **ARRAY[string]** | List of recipients (visible to others) | [optional] 
+**to** | **ARRAY[string]** | List of recipients (visible to others) | 
 **cc** | **ARRAY[string]** | List of Carbon Copy recipients (visible to others) | [optional] 
 **bcc** | **ARRAY[string]** | List of Blind Carbon Copy recipients (hidden from other recipients) | [optional] 
 

@@ -8,7 +8,7 @@ use ElasticEmail::Object::FilePayload;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**binary_content** | **string** | Content of the file sent as binary data | [optional] 
+**binary_content** | **string** | Content of the file sent as binary data | 
 **name** | **string** | Filename | [optional] 
 **content_type** | **string** | Type of file&#39;s content (e.g. image/jpeg) | [optional] 
 
