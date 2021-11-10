@@ -22,7 +22,7 @@ package ElasticEmail::EmailsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # emails_by_msgid_view_get
 #
 # View Email
-# 
+#
 # @param string $msgid Message identifier (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'emails_by_msgid_view_get' } = { 
+    __PACKAGE__->method_documentation->{ 'emails_by_msgid_view_get' } = {
         summary => 'View Email',
         params => $params,
         returns => 'EmailData',
@@ -119,7 +119,7 @@ sub emails_by_msgid_view_get {
 # emails_mergefile_post
 #
 # Send Bulk Emails CSV
-# 
+#
 # @param MergeEmailPayload $merge_email_payload Email data (required)
 {
     my $params = {
@@ -129,7 +129,7 @@ sub emails_by_msgid_view_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'emails_mergefile_post' } = { 
+    __PACKAGE__->method_documentation->{ 'emails_mergefile_post' } = {
         summary => 'Send Bulk Emails CSV',
         params => $params,
         returns => 'EmailSend',
@@ -184,7 +184,7 @@ sub emails_mergefile_post {
 # emails_post
 #
 # Send Bulk Emails
-# 
+#
 # @param EmailMessageData $email_message_data Email data (required)
 {
     my $params = {
@@ -194,7 +194,7 @@ sub emails_mergefile_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'emails_post' } = { 
+    __PACKAGE__->method_documentation->{ 'emails_post' } = {
         summary => 'Send Bulk Emails',
         params => $params,
         returns => 'EmailSend',
@@ -249,7 +249,7 @@ sub emails_post {
 # emails_transactional_post
 #
 # Send Transactional Email
-# 
+#
 # @param EmailTransactionalMessageData $email_transactional_message_data Email data (required)
 {
     my $params = {
@@ -259,7 +259,7 @@ sub emails_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'emails_transactional_post' } = { 
+    __PACKAGE__->method_documentation->{ 'emails_transactional_post' } = {
         summary => 'Send Transactional Email',
         params => $params,
         returns => 'EmailSend',

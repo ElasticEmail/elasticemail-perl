@@ -8,7 +8,7 @@ use ElasticEmail::Object::ContactHistory;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**event_type** | [**ContactHistEventType**](ContactHistEventType.md) | Type of event occured on this Contact. | [optional] 
+**event_type** | [**ContactHistEventType**](ContactHistEventType.md) |  | [optional] 
 **event_date** | **DateTime** | Formatted date of event. | [optional] 
 **channel_name** | **string** | Name of channel this event occured on | [optional] 
 **template_name** | **string** | Name of template this event occured on | [optional] 

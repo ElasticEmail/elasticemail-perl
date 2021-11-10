@@ -22,7 +22,7 @@ package ElasticEmail::TemplatesApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # templates_by_name_delete
 #
 # Delete Template
-# 
+#
 # @param string $name Name of template. (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'templates_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'templates_by_name_delete' } = {
         summary => 'Delete Template',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub templates_by_name_delete {
 # templates_by_name_get
 #
 # Load Template
-# 
+#
 # @param string $name Name of template. (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub templates_by_name_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'templates_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'templates_by_name_get' } = {
         summary => 'Load Template',
         params => $params,
         returns => 'Template',
@@ -182,7 +182,7 @@ sub templates_by_name_get {
 # templates_by_name_put
 #
 # Update Template
-# 
+#
 # @param string $name Name of template. (required)
 # @param TemplatePayload $template_payload  (required)
 {
@@ -198,7 +198,7 @@ sub templates_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'templates_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'templates_by_name_put' } = {
         summary => 'Update Template',
         params => $params,
         returns => 'Template',
@@ -265,7 +265,7 @@ sub templates_by_name_put {
 # templates_get
 #
 # Load Templates
-# 
+#
 # @param ARRAY[TemplateScope] $scope_type Return templates with specified scope only (required)
 # @param ARRAY[TemplateType] $template_types Return templates with specified type only (optional)
 # @param int $limit Maximum number of returned items. (optional)
@@ -293,7 +293,7 @@ sub templates_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'templates_get' } = { 
+    __PACKAGE__->method_documentation->{ 'templates_get' } = {
         summary => 'Load Templates',
         params => $params,
         returns => 'ARRAY[Template]',
@@ -363,7 +363,7 @@ sub templates_get {
 # templates_post
 #
 # Add Template
-# 
+#
 # @param TemplatePayload $template_payload  (required)
 {
     my $params = {
@@ -373,7 +373,7 @@ sub templates_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'templates_post' } = { 
+    __PACKAGE__->method_documentation->{ 'templates_post' } = {
         summary => 'Add Template',
         params => $params,
         returns => 'Template',

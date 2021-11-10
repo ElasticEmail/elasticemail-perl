@@ -23,7 +23,7 @@ Load Campaign Stats
 
 Retrieve stats of an existing campaign. Required Access Level: ViewChannels
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::StatisticsApi;
@@ -37,7 +37,7 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
 
 my $name = "name_example"; # string | The name of the campaign to get.
 
-eval { 
+eval {
     my $result = $api_instance->statistics_campaigns_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -74,7 +74,7 @@ Load Campaigns Stats
 
 Returns a list of your Campaigns' stats. Required Access Level: ViewChannels
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::StatisticsApi;
@@ -89,7 +89,7 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->statistics_campaigns_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -127,7 +127,7 @@ Load Channel Stats
 
 Retrieve an existing channel stats. Required Access Level: ViewChannels
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::StatisticsApi;
@@ -141,7 +141,7 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
 
 my $name = "name_example"; # string | The name of the channel to get.
 
-eval { 
+eval {
     my $result = $api_instance->statistics_channels_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -178,7 +178,7 @@ Load Channels Stats
 
 Returns a list of your Channels' stats. Required Access Level: ViewChannels
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::StatisticsApi;
@@ -193,7 +193,7 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->statistics_channels_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -231,7 +231,7 @@ Load Statistics
 
 Returns basic statistics. Required Access Level: ViewReports
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::StatisticsApi;
@@ -246,7 +246,7 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
 my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
 my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 
-eval { 
+eval {
     my $result = $api_instance->statistics_get(from => $from, to => $to);
     print Dumper($result);
 };

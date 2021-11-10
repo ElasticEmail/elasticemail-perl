@@ -28,7 +28,7 @@ Delete Email Verification Result
 
 Delete a result with given email if exists. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -42,7 +42,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $email = "email_example"; # string | Email address to verification
 
-eval { 
+eval {
     $api_instance->verifications_by_email_delete(email => $email);
 };
 if ($@) {
@@ -78,7 +78,7 @@ Get Email Verification Result
 
 Returns a result of verified email. Required Access Level: ViewEmailVerifications
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -92,7 +92,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $email = "email_example"; # string | Email address to view verification result of
 
-eval { 
+eval {
     my $result = $api_instance->verifications_by_email_get(email => $email);
     print Dumper($result);
 };
@@ -129,7 +129,7 @@ Verify Email
 
 Verify single email address and returns result of verification. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -143,7 +143,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $email = "email_example"; # string | Email address to verify
 
-eval { 
+eval {
     my $result = $api_instance->verifications_by_email_post(email => $email);
     print Dumper($result);
 };
@@ -180,7 +180,7 @@ Delete File Verification Result
 
 Delete Verification Results if they exist. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -194,7 +194,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; # string | ID of the exported file
 
-eval { 
+eval {
     $api_instance->verifications_files_by_id_delete(id => $id);
 };
 if ($@) {
@@ -230,7 +230,7 @@ Download File Verification Result
 
 Download verification results as a ZIP file. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -244,7 +244,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $id = "id_example"; # string | Verification ID to download
 
-eval { 
+eval {
     my $result = $api_instance->verifications_files_by_id_result_download_get(id => $id);
     print Dumper($result);
 };
@@ -281,7 +281,7 @@ Get Detailed File Verification Result
 
 Returns status and results (if verified) of file with given ID. Required Access Level: ViewEmailVerifications
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -297,7 +297,7 @@ my $id = "id_example"; # string | ID of the Verification to display status of
 my $limit = 56; # int | Maximum number of returned email verification results
 my $offset = 56; # int | How many result items should be returned ahead
 
-eval { 
+eval {
     my $result = $api_instance->verifications_files_by_id_result_get(id => $id, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -336,7 +336,7 @@ Start verification
 
 Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -350,7 +350,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $id = "id_example"; # string | File ID to start verification
 
-eval { 
+eval {
     $api_instance->verifications_files_by_id_verification_post(id => $id);
 };
 if ($@) {
@@ -386,7 +386,7 @@ Upload File with Emails
 
 Uploads a CSV file with list of emails that can then be triggered for verification. An 'email' column is required. Required Access Level: VerifyEmails
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -400,7 +400,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 
 my $file = "/path/to/file"; # string | 
 
-eval { 
+eval {
     my $result = $api_instance->verifications_files_post(file => $file);
     print Dumper($result);
 };
@@ -437,7 +437,7 @@ Get Files Verification Results
 
 Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -450,7 +450,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 );
 
 
-eval { 
+eval {
     my $result = $api_instance->verifications_files_result_get();
     print Dumper($result);
 };
@@ -484,7 +484,7 @@ Get Emails Verification Results
 
 Returns a results of all verified single emails. Required Access Level: ViewEmailVerifications
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::VerificationsApi;
@@ -499,7 +499,7 @@ my $api_instance = ElasticEmail::VerificationsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->verifications_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };

@@ -28,7 +28,7 @@ Delete Contact
 
 Deletes the provided contact. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -42,7 +42,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 
 my $email = mail@example.com; # string | Proper email address.
 
-eval { 
+eval {
     $api_instance->contacts_by_email_delete(email => $email);
 };
 if ($@) {
@@ -78,7 +78,7 @@ Load Contact
 
 Load detailed contact information for specified email. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -92,7 +92,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 
 my $email = mail@example.com; # string | Proper email address.
 
-eval { 
+eval {
     my $result = $api_instance->contacts_by_email_get(email => $email);
     print Dumper($result);
 };
@@ -129,7 +129,7 @@ Load History
 
 Returns detailed history of specified Contact. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -145,7 +145,7 @@ my $email = mail@example.com; # string | Proper email address.
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->contacts_by_email_history_get(email => $email, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -184,7 +184,7 @@ Update Contact
 
 Update selected contact. Omitted contact's fields will not be changed. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -199,7 +199,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 my $email = mail@example.com; # string | Proper email address.
 my $contact_update_payload = ElasticEmail::Object::ContactUpdatePayload->new(); # ContactUpdatePayload | 
 
-eval { 
+eval {
     my $result = $api_instance->contacts_by_email_put(email => $email, contact_update_payload => $contact_update_payload);
     print Dumper($result);
 };
@@ -237,7 +237,7 @@ Delete Contacts Bulk
 
 Deletes provided contacts in bulk. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -251,7 +251,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 
 my $emails_payload = ElasticEmail::Object::EmailsPayload->new(); # EmailsPayload | Provide either rule or a list of emails, not both.
 
-eval { 
+eval {
     $api_instance->contacts_delete_post(emails_payload => $emails_payload);
 };
 if ($@) {
@@ -287,7 +287,7 @@ Check Export Status
 
 Check the current status of the export. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -301,7 +301,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 
 my $id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; # string | ID of the exported file
 
-eval { 
+eval {
     my $result = $api_instance->contacts_export_by_id_status_get(id => $id);
     print Dumper($result);
 };
@@ -338,7 +338,7 @@ Export Contacts
 
 Request an Export of specified Contacts. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -356,7 +356,7 @@ my $emails = [mail@contact.com,mail1@contact.com,mail2@contact.com]; # ARRAY[str
 my $compression_format = new ElasticEmail.CompressionFormat(); # CompressionFormat | FileResponse compression format. None or Zip.
 my $file_name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     my $result = $api_instance->contacts_export_post(file_format => $file_format, rule => $rule, emails => $emails, compression_format => $compression_format, file_name => $file_name);
     print Dumper($result);
 };
@@ -397,7 +397,7 @@ Load Contacts
 
 Returns a list of contacts. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -412,7 +412,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->contacts_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -450,7 +450,7 @@ Upload Contacts
 
 Upload contacts from a file. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -466,7 +466,7 @@ my $list_name = "list_name_example"; # string | Name of an existing list to add 
 my $encoding_name = "encoding_name_example"; # string | In what encoding the file is uploaded
 my $file = "/path/to/file"; # string | 
 
-eval { 
+eval {
     $api_instance->contacts_import_post(list_name => $list_name, encoding_name => $encoding_name, file => $file);
 };
 if ($@) {
@@ -504,7 +504,7 @@ Add Contact
 
 Add new Contacts to your Lists. Up to 1000 can be added (for more please refer to the import request). Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ContactsApi;
@@ -519,7 +519,7 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 my $contact_payload = [ElasticEmail::Object::ARRAY[ContactPayload]->new()]; # ARRAY[ContactPayload] | 
 my $listnames = [("null")]; # ARRAY[string] | Names of lists to which the uploaded contacts should be added to
 
-eval { 
+eval {
     my $result = $api_instance->contacts_post(contact_payload => $contact_payload, listnames => $listnames);
     print Dumper($result);
 };

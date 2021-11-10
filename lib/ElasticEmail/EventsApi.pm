@@ -22,7 +22,7 @@ package ElasticEmail::EventsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # events_by_transactionid_get
 #
 # Load Email Events
-# 
+#
 # @param string $transactionid ID number of transaction (required)
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
@@ -92,7 +92,7 @@ sub new {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_by_transactionid_get' } = { 
+    __PACKAGE__->method_documentation->{ 'events_by_transactionid_get' } = {
         summary => 'Load Email Events',
         params => $params,
         returns => 'ARRAY[RecipientEvent]',
@@ -174,7 +174,7 @@ sub events_by_transactionid_get {
 # events_channels_by_name_export_post
 #
 # Export Channel Events
-# 
+#
 # @param string $name Name of selected channel. (required)
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
@@ -220,7 +220,7 @@ sub events_by_transactionid_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_channels_by_name_export_post' } = { 
+    __PACKAGE__->method_documentation->{ 'events_channels_by_name_export_post' } = {
         summary => 'Export Channel Events',
         params => $params,
         returns => 'ExportLink',
@@ -307,7 +307,7 @@ sub events_channels_by_name_export_post {
 # events_channels_by_name_get
 #
 # Load Channel Events
-# 
+#
 # @param string $name Name of selected channel. (required)
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
@@ -353,7 +353,7 @@ sub events_channels_by_name_export_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_channels_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'events_channels_by_name_get' } = {
         summary => 'Load Channel Events',
         params => $params,
         returns => 'ARRAY[RecipientEvent]',
@@ -440,7 +440,7 @@ sub events_channels_by_name_get {
 # events_channels_export_by_id_status_get
 #
 # Check Channel Export Status
-# 
+#
 # @param string $id ID of the exported file (required)
 {
     my $params = {
@@ -450,7 +450,7 @@ sub events_channels_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_channels_export_by_id_status_get' } = { 
+    __PACKAGE__->method_documentation->{ 'events_channels_export_by_id_status_get' } = {
         summary => 'Check Channel Export Status',
         params => $params,
         returns => 'ExportStatus',
@@ -507,7 +507,7 @@ sub events_channels_export_by_id_status_get {
 # events_export_by_id_status_get
 #
 # Check Export Status
-# 
+#
 # @param string $id ID of the exported file (required)
 {
     my $params = {
@@ -517,7 +517,7 @@ sub events_channels_export_by_id_status_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_export_by_id_status_get' } = { 
+    __PACKAGE__->method_documentation->{ 'events_export_by_id_status_get' } = {
         summary => 'Check Export Status',
         params => $params,
         returns => 'ExportStatus',
@@ -574,7 +574,7 @@ sub events_export_by_id_status_get {
 # events_export_post
 #
 # Export Events
-# 
+#
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
@@ -614,7 +614,7 @@ sub events_export_by_id_status_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_export_post' } = { 
+    __PACKAGE__->method_documentation->{ 'events_export_post' } = {
         summary => 'Export Events',
         params => $params,
         returns => 'ExportLink',
@@ -689,7 +689,7 @@ sub events_export_post {
 # events_get
 #
 # Load Events
-# 
+#
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
@@ -729,7 +729,7 @@ sub events_export_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'events_get' } = { 
+    __PACKAGE__->method_documentation->{ 'events_get' } = {
         summary => 'Load Events',
         params => $params,
         returns => 'ARRAY[RecipientEvent]',

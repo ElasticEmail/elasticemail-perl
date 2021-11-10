@@ -22,7 +22,7 @@ package ElasticEmail::InboundRouteApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # inboundroute_by_id_delete
 #
 # Delete Route
-# 
+#
 # @param string $id  (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_delete' } = {
         summary => 'Delete Route',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub inboundroute_by_id_delete {
 # inboundroute_by_id_get
 #
 # Get Route
-# 
+#
 # @param string $id ID number of your attachment (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub inboundroute_by_id_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_get' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_get' } = {
         summary => 'Get Route',
         params => $params,
         returns => 'InboundRoute',
@@ -182,7 +182,7 @@ sub inboundroute_by_id_get {
 # inboundroute_by_id_put
 #
 # Update Route
-# 
+#
 # @param string $id  (required)
 # @param InboundPayload $inbound_payload  (required)
 {
@@ -198,7 +198,7 @@ sub inboundroute_by_id_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_put' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_by_id_put' } = {
         summary => 'Update Route',
         params => $params,
         returns => 'InboundRoute',
@@ -265,11 +265,11 @@ sub inboundroute_by_id_put {
 # inboundroute_get
 #
 # Get Routes
-# 
+#
 {
     my $params = {
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_get' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_get' } = {
         summary => 'Get Routes',
         params => $params,
         returns => 'ARRAY[InboundRoute]',
@@ -314,7 +314,7 @@ sub inboundroute_get {
 # inboundroute_order_put
 #
 # Update Sorting
-# 
+#
 # @param ARRAY[SortOrderItem] $sort_order_item Change the ordering of inbound routes for when matching the inbound (required)
 {
     my $params = {
@@ -324,7 +324,7 @@ sub inboundroute_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_order_put' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_order_put' } = {
         summary => 'Update Sorting',
         params => $params,
         returns => 'ARRAY[InboundRoute]',
@@ -379,7 +379,7 @@ sub inboundroute_order_put {
 # inboundroute_post
 #
 # Create Route
-# 
+#
 # @param InboundPayload $inbound_payload  (required)
 {
     my $params = {
@@ -389,7 +389,7 @@ sub inboundroute_order_put {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'inboundroute_post' } = { 
+    __PACKAGE__->method_documentation->{ 'inboundroute_post' } = {
         summary => 'Create Route',
         params => $params,
         returns => 'InboundRoute',

@@ -25,7 +25,7 @@ Load Email Events
 
 Returns a log of delivery events for the specific transaction ID. Required Access Level: ViewReports
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -44,7 +44,7 @@ my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy |
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->events_by_transactionid_get(transactionid => $transactionid, from => $from, to => $to, order_by => $order_by, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -86,7 +86,7 @@ Export Channel Events
 
 Export delivery events log information to the specified file format. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -106,7 +106,7 @@ my $file_format = new ElasticEmail.ExportFileFormats(); # ExportFileFormats | Fo
 my $compression_format = new ElasticEmail.CompressionFormat(); # CompressionFormat | FileResponse compression format. None or Zip.
 my $file_name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     my $result = $api_instance->events_channels_by_name_export_post(name => $name, event_types => $event_types, from => $from, to => $to, file_format => $file_format, compression_format => $compression_format, file_name => $file_name);
     print Dumper($result);
 };
@@ -149,7 +149,7 @@ Load Channel Events
 
 Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -169,7 +169,7 @@ my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy |
 my $limit = 56; # int | How many items to load. Maximum for this request is 1000 items
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->events_channels_by_name_get(name => $name, event_types => $event_types, from => $from, to => $to, order_by => $order_by, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -212,7 +212,7 @@ Check Channel Export Status
 
 Check the current status of the channel export. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -226,7 +226,7 @@ my $api_instance = ElasticEmail::EventsApi->new(
 
 my $id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; # string | ID of the exported file
 
-eval { 
+eval {
     my $result = $api_instance->events_channels_export_by_id_status_get(id => $id);
     print Dumper($result);
 };
@@ -263,7 +263,7 @@ Check Export Status
 
 Check the current status of the export. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -277,7 +277,7 @@ my $api_instance = ElasticEmail::EventsApi->new(
 
 my $id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; # string | ID of the exported file
 
-eval { 
+eval {
     my $result = $api_instance->events_export_by_id_status_get(id => $id);
     print Dumper($result);
 };
@@ -314,7 +314,7 @@ Export Events
 
 Export delivery events log information to the specified file format. Required Access Level: Export
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -333,7 +333,7 @@ my $file_format = new ElasticEmail.ExportFileFormats(); # ExportFileFormats | Fo
 my $compression_format = new ElasticEmail.CompressionFormat(); # CompressionFormat | FileResponse compression format. None or Zip.
 my $file_name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     my $result = $api_instance->events_export_post(event_types => $event_types, from => $from, to => $to, file_format => $file_format, compression_format => $compression_format, file_name => $file_name);
     print Dumper($result);
 };
@@ -375,7 +375,7 @@ Load Events
 
 Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EventsApi;
@@ -394,7 +394,7 @@ my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy |
 my $limit = 56; # int | How many items to load. Maximum for this request is 1000 items
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->events_get(event_types => $event_types, from => $from, to => $to, order_by => $order_by, limit => $limit, offset => $offset);
     print Dumper($result);
 };

@@ -23,7 +23,7 @@ Delete Campaign
 
 Delete the specific campaign.  This does not cancel in progress email, see Cancel In Progress. Required Access Level: ModifyCampaigns
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::CampaignsApi;
@@ -37,7 +37,7 @@ my $api_instance = ElasticEmail::CampaignsApi->new(
 
 my $name = "name_example"; # string | Name of Campaign to delete
 
-eval { 
+eval {
     $api_instance->campaigns_by_name_delete(name => $name);
 };
 if ($@) {
@@ -73,7 +73,7 @@ Load Campaign
 
 Returns the specified campaign details. Required Access Level: ViewCampaigns
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::CampaignsApi;
@@ -87,7 +87,7 @@ my $api_instance = ElasticEmail::CampaignsApi->new(
 
 my $name = "name_example"; # string | Name of Campaign to get
 
-eval { 
+eval {
     my $result = $api_instance->campaigns_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -124,7 +124,7 @@ Update Campaign
 
 Updates a previously added campaign.  Only Active and Paused campaigns can be updated. Required Access Level: ModifyCampaigns
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::CampaignsApi;
@@ -139,7 +139,7 @@ my $api_instance = ElasticEmail::CampaignsApi->new(
 my $name = "name_example"; # string | Name of Campaign to update
 my $campaign = ElasticEmail::Object::Campaign->new(); # Campaign | JSON representation of a campaign
 
-eval { 
+eval {
     my $result = $api_instance->campaigns_by_name_put(name => $name, campaign => $campaign);
     print Dumper($result);
 };
@@ -177,7 +177,7 @@ Load Campaigns
 
 Returns a list all of your campaigns. Limited to 1000 results. Required Access Level: ViewCampaigns
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::CampaignsApi;
@@ -193,7 +193,7 @@ my $search = "search_example"; # string | Text fragment used for searching in Ca
 my $offset = 20; # int | How many items should be returned ahead.
 my $limit = 100; # int | Maximum number of returned items.
 
-eval { 
+eval {
     my $result = $api_instance->campaigns_get(search => $search, offset => $offset, limit => $limit);
     print Dumper($result);
 };
@@ -232,7 +232,7 @@ Add Campaign
 
 Add a campaign for processing. Required Access Level: ModifyCampaigns
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::CampaignsApi;
@@ -246,7 +246,7 @@ my $api_instance = ElasticEmail::CampaignsApi->new(
 
 my $campaign = ElasticEmail::Object::Campaign->new(); # Campaign | JSON representation of a campaign
 
-eval { 
+eval {
     my $result = $api_instance->campaigns_post(campaign => $campaign);
     print Dumper($result);
 };

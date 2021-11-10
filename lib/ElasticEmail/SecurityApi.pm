@@ -22,7 +22,7 @@ package ElasticEmail::SecurityApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # security_apikeys_by_name_delete
 #
 # Delete ApiKey
-# 
+#
 # @param string $name Name of the ApiKey (required)
 # @param string $subaccount Email of the subaccount of which ApiKey should be deleted (optional)
 {
@@ -68,7 +68,7 @@ sub new {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_delete' } = {
         summary => 'Delete ApiKey',
         params => $params,
         returns => undef,
@@ -126,7 +126,7 @@ sub security_apikeys_by_name_delete {
 # security_apikeys_by_name_get
 #
 # Load ApiKey
-# 
+#
 # @param string $name Name of the ApiKey (required)
 # @param string $subaccount Email of the subaccount of which ApiKey should be loaded (optional)
 {
@@ -142,7 +142,7 @@ sub security_apikeys_by_name_delete {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_get' } = {
         summary => 'Load ApiKey',
         params => $params,
         returns => 'ApiKey',
@@ -204,7 +204,7 @@ sub security_apikeys_by_name_get {
 # security_apikeys_by_name_put
 #
 # Update ApiKey
-# 
+#
 # @param string $name Name of the ApiKey (required)
 # @param ApiKeyPayload $api_key_payload  (required)
 {
@@ -220,7 +220,7 @@ sub security_apikeys_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'security_apikeys_by_name_put' } = {
         summary => 'Update ApiKey',
         params => $params,
         returns => 'ApiKey',
@@ -287,7 +287,7 @@ sub security_apikeys_by_name_put {
 # security_apikeys_get
 #
 # List ApiKeys
-# 
+#
 # @param string $subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
 {
     my $params = {
@@ -297,7 +297,7 @@ sub security_apikeys_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_apikeys_get' } = { 
+    __PACKAGE__->method_documentation->{ 'security_apikeys_get' } = {
         summary => 'List ApiKeys',
         params => $params,
         returns => 'ARRAY[ApiKey]',
@@ -347,7 +347,7 @@ sub security_apikeys_get {
 # security_apikeys_post
 #
 # Add ApiKey
-# 
+#
 # @param ApiKeyPayload $api_key_payload  (required)
 {
     my $params = {
@@ -357,7 +357,7 @@ sub security_apikeys_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_apikeys_post' } = { 
+    __PACKAGE__->method_documentation->{ 'security_apikeys_post' } = {
         summary => 'Add ApiKey',
         params => $params,
         returns => 'NewApiKey',
@@ -412,7 +412,7 @@ sub security_apikeys_post {
 # security_smtp_by_name_delete
 #
 # Delete SMTP Credential
-# 
+#
 # @param string $name Name of the SMTP Credential (required)
 # @param string $subaccount Email of the subaccount of which credential should be deleted (optional)
 {
@@ -428,7 +428,7 @@ sub security_apikeys_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_delete' } = {
         summary => 'Delete SMTP Credential',
         params => $params,
         returns => undef,
@@ -486,7 +486,7 @@ sub security_smtp_by_name_delete {
 # security_smtp_by_name_get
 #
 # Load SMTP Credential
-# 
+#
 # @param string $name Name of the SMTP Credential (required)
 # @param string $subaccount Email of the subaccount of which credential should be loaded (optional)
 {
@@ -502,7 +502,7 @@ sub security_smtp_by_name_delete {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_get' } = {
         summary => 'Load SMTP Credential',
         params => $params,
         returns => 'SmtpCredentials',
@@ -564,7 +564,7 @@ sub security_smtp_by_name_get {
 # security_smtp_by_name_put
 #
 # Update SMTP Credential
-# 
+#
 # @param string $name Name of the SMTP Credential (required)
 # @param SmtpCredentialsPayload $smtp_credentials_payload  (required)
 {
@@ -580,7 +580,7 @@ sub security_smtp_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'security_smtp_by_name_put' } = {
         summary => 'Update SMTP Credential',
         params => $params,
         returns => 'SmtpCredentials',
@@ -647,7 +647,7 @@ sub security_smtp_by_name_put {
 # security_smtp_get
 #
 # List SMTP Credentials
-# 
+#
 # @param string $subaccount Email of the subaccount of which credentials should be listed (optional)
 {
     my $params = {
@@ -657,7 +657,7 @@ sub security_smtp_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_smtp_get' } = { 
+    __PACKAGE__->method_documentation->{ 'security_smtp_get' } = {
         summary => 'List SMTP Credentials',
         params => $params,
         returns => 'ARRAY[SmtpCredentials]',
@@ -707,7 +707,7 @@ sub security_smtp_get {
 # security_smtp_post
 #
 # Add SMTP Credential
-# 
+#
 # @param SmtpCredentialsPayload $smtp_credentials_payload  (required)
 {
     my $params = {
@@ -717,7 +717,7 @@ sub security_smtp_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'security_smtp_post' } = { 
+    __PACKAGE__->method_documentation->{ 'security_smtp_post' } = {
         summary => 'Add SMTP Credential',
         params => $params,
         returns => 'NewSmtpCredentials',

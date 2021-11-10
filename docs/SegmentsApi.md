@@ -23,7 +23,7 @@ Delete Segment
 
 Delete an existing segment. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SegmentsApi;
@@ -37,7 +37,7 @@ my $api_instance = ElasticEmail::SegmentsApi->new(
 
 my $name = My Segment 1; # string | Name of your segment.
 
-eval { 
+eval {
     $api_instance->segments_by_name_delete(name => $name);
 };
 if ($@) {
@@ -73,7 +73,7 @@ Load Segment
 
 Returns details for the specified segment. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SegmentsApi;
@@ -87,7 +87,7 @@ my $api_instance = ElasticEmail::SegmentsApi->new(
 
 my $name = "name_example"; # string | Name of the segment you want to load. Will load all contacts if the 'All Contacts' name has been provided
 
-eval { 
+eval {
     my $result = $api_instance->segments_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -124,7 +124,7 @@ Update Segment
 
 Rename or change RULE for your segment. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SegmentsApi;
@@ -139,7 +139,7 @@ my $api_instance = ElasticEmail::SegmentsApi->new(
 my $name = My Segment 1; # string | Name of your segment.
 my $segment_payload = ElasticEmail::Object::SegmentPayload->new(); # SegmentPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->segments_by_name_put(name => $name, segment_payload => $segment_payload);
     print Dumper($result);
 };
@@ -177,7 +177,7 @@ Load Segments
 
 Returns a list of all your available Segments. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SegmentsApi;
@@ -192,7 +192,7 @@ my $api_instance = ElasticEmail::SegmentsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->segments_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -230,7 +230,7 @@ Add Segment
 
 Add a new segment, based on specified RULE. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SegmentsApi;
@@ -244,7 +244,7 @@ my $api_instance = ElasticEmail::SegmentsApi->new(
 
 my $segment_payload = ElasticEmail::Object::SegmentPayload->new(); # SegmentPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->segments_post(segment_payload => $segment_payload);
     print Dumper($result);
 };

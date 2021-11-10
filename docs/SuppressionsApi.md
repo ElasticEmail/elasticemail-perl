@@ -30,7 +30,7 @@ Get Bounce List
 
 Retrieve your list of bounced emails. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -46,7 +46,7 @@ my $search = text; # string | Text fragment used for searching.
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_bounces_get(search => $search, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -85,7 +85,7 @@ Add Bounces Async
 
 Add Bounced. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -99,7 +99,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $file = "/path/to/file"; # string | 
 
-eval { 
+eval {
     $api_instance->suppressions_bounces_import_post(file => $file);
 };
 if ($@) {
@@ -135,7 +135,7 @@ Add Bounces
 
 Add Bounced. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -149,7 +149,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $request_body = [ElasticEmail::Object::ARRAY[string]->new()]; # ARRAY[string] | Emails to add as bounces. Limited to 1000 per request
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_bounces_post(request_body => $request_body);
     print Dumper($result);
 };
@@ -186,7 +186,7 @@ Delete Suppression
 
 Delete Suppression. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -200,7 +200,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $email = mail@example.com; # string | Proper email address.
 
-eval { 
+eval {
     $api_instance->suppressions_by_email_delete(email => $email);
 };
 if ($@) {
@@ -236,7 +236,7 @@ Get Suppression
 
 Retrieve your suppression. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -250,7 +250,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $email = mail@example.com; # string | Proper email address.
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_by_email_get(email => $email);
     print Dumper($result);
 };
@@ -287,7 +287,7 @@ Get Complaints List
 
 Retrieve your list of complaints. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -303,7 +303,7 @@ my $search = text; # string | Text fragment used for searching.
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_complaints_get(search => $search, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -342,7 +342,7 @@ Add Complaints Async
 
 Add Complaints. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -356,7 +356,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $file = "/path/to/file"; # string | 
 
-eval { 
+eval {
     $api_instance->suppressions_complaints_import_post(file => $file);
 };
 if ($@) {
@@ -392,7 +392,7 @@ Add Complaints
 
 Add Complaints. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -406,7 +406,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $request_body = [ElasticEmail::Object::ARRAY[string]->new()]; # ARRAY[string] | Emails to add as complaints. Limited to 1000 per request
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_complaints_post(request_body => $request_body);
     print Dumper($result);
 };
@@ -443,7 +443,7 @@ Get Suppressions
 
 Retrieve your suppressions. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -458,7 +458,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -496,7 +496,7 @@ Get Unsubscribes List
 
 Retrieve your list of unsubscribes. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -512,7 +512,7 @@ my $search = text; # string | Text fragment used for searching.
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_unsubscribes_get(search => $search, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -551,7 +551,7 @@ Add Unsubscribes Async
 
 Add Unsubscribes. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -565,7 +565,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $file = "/path/to/file"; # string | 
 
-eval { 
+eval {
     $api_instance->suppressions_unsubscribes_import_post(file => $file);
 };
 if ($@) {
@@ -601,7 +601,7 @@ Add Unsubscribes
 
 Add Unsubscribes. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SuppressionsApi;
@@ -615,7 +615,7 @@ my $api_instance = ElasticEmail::SuppressionsApi->new(
 
 my $request_body = [ElasticEmail::Object::ARRAY[string]->new()]; # ARRAY[string] | Emails to add as unsubscribes. Limited to 1000 per request
 
-eval { 
+eval {
     my $result = $api_instance->suppressions_unsubscribes_post(request_body => $request_body);
     print Dumper($result);
 };

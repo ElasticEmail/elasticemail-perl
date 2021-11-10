@@ -22,7 +22,7 @@ package ElasticEmail::ListsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # lists_by_name_contacts_post
 #
 # Add Contacts to List
-# 
+#
 # @param string $name Name of your list. (required)
 # @param EmailsPayload $emails_payload Provide either rule or a list of emails, not both. (required)
 {
@@ -68,7 +68,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_by_name_contacts_post' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_by_name_contacts_post' } = {
         summary => 'Add Contacts to List',
         params => $params,
         returns => 'ContactsList',
@@ -135,7 +135,7 @@ sub lists_by_name_contacts_post {
 # lists_by_name_contacts_remove_post
 #
 # Remove Contacts from List
-# 
+#
 # @param string $name Name of your list. (required)
 # @param EmailsPayload $emails_payload Provide either rule or a list of emails, not both. (required)
 {
@@ -151,7 +151,7 @@ sub lists_by_name_contacts_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_by_name_contacts_remove_post' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_by_name_contacts_remove_post' } = {
         summary => 'Remove Contacts from List',
         params => $params,
         returns => undef,
@@ -214,7 +214,7 @@ sub lists_by_name_contacts_remove_post {
 # lists_by_name_delete
 #
 # Delete List
-# 
+#
 # @param string $name Name of your list. (required)
 {
     my $params = {
@@ -224,7 +224,7 @@ sub lists_by_name_contacts_remove_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_by_name_delete' } = {
         summary => 'Delete List',
         params => $params,
         returns => undef,
@@ -277,7 +277,7 @@ sub lists_by_name_delete {
 # lists_by_name_get
 #
 # Load List
-# 
+#
 # @param string $name Name of your list. (required)
 {
     my $params = {
@@ -287,7 +287,7 @@ sub lists_by_name_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_by_name_get' } = {
         summary => 'Load List',
         params => $params,
         returns => 'ContactsList',
@@ -344,7 +344,7 @@ sub lists_by_name_get {
 # lists_by_name_put
 #
 # Update List
-# 
+#
 # @param string $name Name of your list. (required)
 # @param ListUpdatePayload $list_update_payload  (required)
 {
@@ -360,7 +360,7 @@ sub lists_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_by_name_put' } = {
         summary => 'Update List',
         params => $params,
         returns => 'ContactsList',
@@ -427,7 +427,7 @@ sub lists_by_name_put {
 # lists_get
 #
 # Load Lists
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -443,7 +443,7 @@ sub lists_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_get' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_get' } = {
         summary => 'Load Lists',
         params => $params,
         returns => 'ARRAY[ContactsList]',
@@ -498,7 +498,7 @@ sub lists_get {
 # lists_post
 #
 # Add List
-# 
+#
 # @param ListPayload $list_payload  (required)
 {
     my $params = {
@@ -508,7 +508,7 @@ sub lists_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'lists_post' } = { 
+    __PACKAGE__->method_documentation->{ 'lists_post' } = {
         summary => 'Add List',
         params => $params,
         returns => 'ContactsList',

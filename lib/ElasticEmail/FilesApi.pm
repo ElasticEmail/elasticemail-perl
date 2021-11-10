@@ -22,7 +22,7 @@ package ElasticEmail::FilesApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # files_by_name_delete
 #
 # Delete File
-# 
+#
 # @param string $name Name of your file including extension. (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'files_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'files_by_name_delete' } = {
         summary => 'Delete File',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub files_by_name_delete {
 # files_by_name_get
 #
 # Download File
-# 
+#
 # @param string $name Name of your file including extension. (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub files_by_name_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'files_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'files_by_name_get' } = {
         summary => 'Download File',
         params => $params,
         returns => 'string',
@@ -182,7 +182,7 @@ sub files_by_name_get {
 # files_by_name_info_get
 #
 # Load File Details
-# 
+#
 # @param string $name Name of your file including extension. (required)
 {
     my $params = {
@@ -192,7 +192,7 @@ sub files_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'files_by_name_info_get' } = { 
+    __PACKAGE__->method_documentation->{ 'files_by_name_info_get' } = {
         summary => 'Load File Details',
         params => $params,
         returns => 'FileInfo',
@@ -249,7 +249,7 @@ sub files_by_name_info_get {
 # files_get
 #
 # List Files
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -265,7 +265,7 @@ sub files_by_name_info_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'files_get' } = { 
+    __PACKAGE__->method_documentation->{ 'files_get' } = {
         summary => 'List Files',
         params => $params,
         returns => 'ARRAY[FileInfo]',
@@ -320,7 +320,7 @@ sub files_get {
 # files_post
 #
 # Upload File
-# 
+#
 # @param FilePayload $file_payload  (required)
 # @param int $expires_after_days After how many days should the file be deleted. (optional)
 {
@@ -336,7 +336,7 @@ sub files_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'files_post' } = { 
+    __PACKAGE__->method_documentation->{ 'files_post' } = {
         summary => 'Upload File',
         params => $params,
         returns => 'FileInfo',

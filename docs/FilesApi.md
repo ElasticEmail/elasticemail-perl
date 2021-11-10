@@ -23,7 +23,7 @@ Delete File
 
 Permanently deletes the file from your Account. Required Access Level: ModifyFiles
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::FilesApi;
@@ -37,7 +37,7 @@ my $api_instance = ElasticEmail::FilesApi->new(
 
 my $name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     $api_instance->files_by_name_delete(name => $name);
 };
 if ($@) {
@@ -73,7 +73,7 @@ Download File
 
 Gets content of the specified File. Required Access Level: ViewFiles
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::FilesApi;
@@ -87,7 +87,7 @@ my $api_instance = ElasticEmail::FilesApi->new(
 
 my $name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     my $result = $api_instance->files_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -124,7 +124,7 @@ Load File Details
 
 Returns the specified File's details. Required Access Level: ViewFiles
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::FilesApi;
@@ -138,7 +138,7 @@ my $api_instance = ElasticEmail::FilesApi->new(
 
 my $name = filename.txt; # string | Name of your file including extension.
 
-eval { 
+eval {
     my $result = $api_instance->files_by_name_info_get(name => $name);
     print Dumper($result);
 };
@@ -175,7 +175,7 @@ List Files
 
 Returns a list of all your available files. Required Access Level: ViewFiles
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::FilesApi;
@@ -190,7 +190,7 @@ my $api_instance = ElasticEmail::FilesApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->files_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -228,7 +228,7 @@ Upload File
 
 Uploads selected file to the server. Required Access Level: ModifyFiles
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::FilesApi;
@@ -243,7 +243,7 @@ my $api_instance = ElasticEmail::FilesApi->new(
 my $file_payload = ElasticEmail::Object::FilePayload->new(); # FilePayload | 
 my $expires_after_days = 56; # int | After how many days should the file be deleted.
 
-eval { 
+eval {
     my $result = $api_instance->files_post(file_payload => $file_payload, expires_after_days => $expires_after_days);
     print Dumper($result);
 };

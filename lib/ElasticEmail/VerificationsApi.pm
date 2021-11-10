@@ -22,7 +22,7 @@ package ElasticEmail::VerificationsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # verifications_by_email_delete
 #
 # Delete Email Verification Result
-# 
+#
 # @param string $email Email address to verification (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_by_email_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_by_email_delete' } = {
         summary => 'Delete Email Verification Result',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub verifications_by_email_delete {
 # verifications_by_email_get
 #
 # Get Email Verification Result
-# 
+#
 # @param string $email Email address to view verification result of (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub verifications_by_email_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_by_email_get' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_by_email_get' } = {
         summary => 'Get Email Verification Result',
         params => $params,
         returns => 'EmailValidationResult',
@@ -182,7 +182,7 @@ sub verifications_by_email_get {
 # verifications_by_email_post
 #
 # Verify Email
-# 
+#
 # @param string $email Email address to verify (required)
 {
     my $params = {
@@ -192,7 +192,7 @@ sub verifications_by_email_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_by_email_post' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_by_email_post' } = {
         summary => 'Verify Email',
         params => $params,
         returns => 'EmailValidationResult',
@@ -249,7 +249,7 @@ sub verifications_by_email_post {
 # verifications_files_by_id_delete
 #
 # Delete File Verification Result
-# 
+#
 # @param string $id ID of the exported file (required)
 {
     my $params = {
@@ -259,7 +259,7 @@ sub verifications_by_email_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_delete' } = {
         summary => 'Delete File Verification Result',
         params => $params,
         returns => undef,
@@ -312,7 +312,7 @@ sub verifications_files_by_id_delete {
 # verifications_files_by_id_result_download_get
 #
 # Download File Verification Result
-# 
+#
 # @param string $id Verification ID to download (required)
 {
     my $params = {
@@ -322,7 +322,7 @@ sub verifications_files_by_id_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_result_download_get' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_result_download_get' } = {
         summary => 'Download File Verification Result',
         params => $params,
         returns => 'string',
@@ -379,7 +379,7 @@ sub verifications_files_by_id_result_download_get {
 # verifications_files_by_id_result_get
 #
 # Get Detailed File Verification Result
-# 
+#
 # @param string $id ID of the Verification to display status of (required)
 # @param int $limit Maximum number of returned email verification results (optional)
 # @param int $offset How many result items should be returned ahead (optional)
@@ -401,7 +401,7 @@ sub verifications_files_by_id_result_download_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_result_get' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_result_get' } = {
         summary => 'Get Detailed File Verification Result',
         params => $params,
         returns => 'VerificationFileResultDetails',
@@ -468,7 +468,7 @@ sub verifications_files_by_id_result_get {
 # verifications_files_by_id_verification_post
 #
 # Start verification
-# 
+#
 # @param string $id File ID to start verification (required)
 {
     my $params = {
@@ -478,7 +478,7 @@ sub verifications_files_by_id_result_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_verification_post' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_by_id_verification_post' } = {
         summary => 'Start verification',
         params => $params,
         returns => undef,
@@ -531,7 +531,7 @@ sub verifications_files_by_id_verification_post {
 # verifications_files_post
 #
 # Upload File with Emails
-# 
+#
 # @param string $file  (optional)
 {
     my $params = {
@@ -541,7 +541,7 @@ sub verifications_files_by_id_verification_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_post' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_post' } = {
         summary => 'Upload File with Emails',
         params => $params,
         returns => 'VerificationFileResult',
@@ -572,7 +572,7 @@ sub verifications_files_post {
         $form_params->{'file'} = [] unless defined $form_params->{'file'};
         push @{$form_params->{'file'}}, $args{'file'};
             }
-    
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(apikey )];
@@ -592,11 +592,11 @@ sub verifications_files_post {
 # verifications_files_result_get
 #
 # Get Files Verification Results
-# 
+#
 {
     my $params = {
     };
-    __PACKAGE__->method_documentation->{ 'verifications_files_result_get' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_files_result_get' } = {
         summary => 'Get Files Verification Results',
         params => $params,
         returns => 'ARRAY[VerificationFileResult]',
@@ -641,7 +641,7 @@ sub verifications_files_result_get {
 # verifications_get
 #
 # Get Emails Verification Results
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -657,7 +657,7 @@ sub verifications_files_result_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'verifications_get' } = { 
+    __PACKAGE__->method_documentation->{ 'verifications_get' } = {
         summary => 'Get Emails Verification Results',
         params => $params,
         returns => 'ARRAY[EmailValidationResult]',

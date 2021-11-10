@@ -9,7 +9,7 @@ use ElasticEmail::Object::NewSmtpCredentials;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **string** | Unique token to be used in the system | [optional] 
-**access_level** | [**AccessLevel**](AccessLevel.md) | Access level of this Smtp Credential. | [optional] 
+**access_level** | [**AccessLevel**](AccessLevel.md) |  | [optional] 
 **name** | **string** | Name of the key. | [optional] 
 **date_created** | **DateTime** | Date this SmtpCredential was created. | [optional] 
 **last_use** | **DateTime** | Date this SmtpCredential was last used. | [optional] 

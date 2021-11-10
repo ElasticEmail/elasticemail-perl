@@ -22,7 +22,7 @@ package ElasticEmail::StatisticsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # statistics_campaigns_by_name_get
 #
 # Load Campaign Stats
-# 
+#
 # @param string $name The name of the campaign to get. (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'statistics_campaigns_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'statistics_campaigns_by_name_get' } = {
         summary => 'Load Campaign Stats',
         params => $params,
         returns => 'ChannelLogStatusSummary',
@@ -119,7 +119,7 @@ sub statistics_campaigns_by_name_get {
 # statistics_campaigns_get
 #
 # Load Campaigns Stats
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -135,7 +135,7 @@ sub statistics_campaigns_by_name_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'statistics_campaigns_get' } = { 
+    __PACKAGE__->method_documentation->{ 'statistics_campaigns_get' } = {
         summary => 'Load Campaigns Stats',
         params => $params,
         returns => 'ARRAY[ChannelLogStatusSummary]',
@@ -190,7 +190,7 @@ sub statistics_campaigns_get {
 # statistics_channels_by_name_get
 #
 # Load Channel Stats
-# 
+#
 # @param string $name The name of the channel to get. (required)
 {
     my $params = {
@@ -200,7 +200,7 @@ sub statistics_campaigns_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'statistics_channels_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'statistics_channels_by_name_get' } = {
         summary => 'Load Channel Stats',
         params => $params,
         returns => 'ChannelLogStatusSummary',
@@ -257,7 +257,7 @@ sub statistics_channels_by_name_get {
 # statistics_channels_get
 #
 # Load Channels Stats
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -273,7 +273,7 @@ sub statistics_channels_by_name_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'statistics_channels_get' } = { 
+    __PACKAGE__->method_documentation->{ 'statistics_channels_get' } = {
         summary => 'Load Channels Stats',
         params => $params,
         returns => 'ARRAY[ChannelLogStatusSummary]',
@@ -328,7 +328,7 @@ sub statistics_channels_get {
 # statistics_get
 #
 # Load Statistics
-# 
+#
 # @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (required)
 # @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 {
@@ -344,7 +344,7 @@ sub statistics_channels_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'statistics_get' } = { 
+    __PACKAGE__->method_documentation->{ 'statistics_get' } = {
         summary => 'Load Statistics',
         params => $params,
         returns => 'LogStatusSummary',

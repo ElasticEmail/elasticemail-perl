@@ -22,7 +22,7 @@ View Email
 
 Returns email details for viewing or rendering. Required Access Level: None
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EmailsApi;
@@ -36,7 +36,7 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 
 my $msgid = "msgid_example"; # string | Message identifier
 
-eval { 
+eval {
     my $result = $api_instance->emails_by_msgid_view_get(msgid => $msgid);
     print Dumper($result);
 };
@@ -73,7 +73,7 @@ Send Bulk Emails CSV
 
 Send bulk merge email. Required Access Level: SendHttp
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EmailsApi;
@@ -87,7 +87,7 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 
 my $merge_email_payload = ElasticEmail::Object::MergeEmailPayload->new(); # MergeEmailPayload | Email data
 
-eval { 
+eval {
     my $result = $api_instance->emails_mergefile_post(merge_email_payload => $merge_email_payload);
     print Dumper($result);
 };
@@ -124,7 +124,7 @@ Send Bulk Emails
 
 Send bulk merge email. Required Access Level: SendHttp
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EmailsApi;
@@ -138,7 +138,7 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 
 my $email_message_data = ElasticEmail::Object::EmailMessageData->new(); # EmailMessageData | Email data
 
-eval { 
+eval {
     my $result = $api_instance->emails_post(email_message_data => $email_message_data);
     print Dumper($result);
 };
@@ -175,7 +175,7 @@ Send Transactional Email
 
 Send transactional emails (recipients will be known to each other). Required Access Level: SendHttp
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::EmailsApi;
@@ -189,7 +189,7 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 
 my $email_transactional_message_data = ElasticEmail::Object::EmailTransactionalMessageData->new(); # EmailTransactionalMessageData | Email data
 
-eval { 
+eval {
     my $result = $api_instance->emails_transactional_post(email_transactional_message_data => $email_transactional_message_data);
     print Dumper($result);
 };

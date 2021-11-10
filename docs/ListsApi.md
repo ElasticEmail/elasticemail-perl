@@ -25,7 +25,7 @@ Add Contacts to List
 
 Add existing Contacts to specified list. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -40,7 +40,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 my $name = My List 1; # string | Name of your list.
 my $emails_payload = ElasticEmail::Object::EmailsPayload->new(); # EmailsPayload | Provide either rule or a list of emails, not both.
 
-eval { 
+eval {
     my $result = $api_instance->lists_by_name_contacts_post(name => $name, emails_payload => $emails_payload);
     print Dumper($result);
 };
@@ -78,7 +78,7 @@ Remove Contacts from List
 
 Remove specified Contacts from your list. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -93,7 +93,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 my $name = My List 1; # string | Name of your list.
 my $emails_payload = ElasticEmail::Object::EmailsPayload->new(); # EmailsPayload | Provide either rule or a list of emails, not both.
 
-eval { 
+eval {
     $api_instance->lists_by_name_contacts_remove_post(name => $name, emails_payload => $emails_payload);
 };
 if ($@) {
@@ -130,7 +130,7 @@ Delete List
 
 Deletes List and removes all the Contacts from it (does not delete Contacts). Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -144,7 +144,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 
 my $name = My List 1; # string | Name of your list.
 
-eval { 
+eval {
     $api_instance->lists_by_name_delete(name => $name);
 };
 if ($@) {
@@ -180,7 +180,7 @@ Load List
 
 Returns detailed information about specified list. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -194,7 +194,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 
 my $name = My List 1; # string | Name of your list.
 
-eval { 
+eval {
     my $result = $api_instance->lists_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -231,7 +231,7 @@ Update List
 
 Update existing list. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -246,7 +246,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 my $name = My List 1; # string | Name of your list.
 my $list_update_payload = ElasticEmail::Object::ListUpdatePayload->new(); # ListUpdatePayload | 
 
-eval { 
+eval {
     my $result = $api_instance->lists_by_name_put(name => $name, list_update_payload => $list_update_payload);
     print Dumper($result);
 };
@@ -284,7 +284,7 @@ Load Lists
 
 Returns all your existing lists. Required Access Level: ViewContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -299,7 +299,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->lists_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -337,7 +337,7 @@ Add List
 
 Add a new list. Required Access Level: ModifyContacts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::ListsApi;
@@ -351,7 +351,7 @@ my $api_instance = ElasticEmail::ListsApi->new(
 
 my $list_payload = ElasticEmail::Object::ListPayload->new(); # ListPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->lists_post(list_payload => $list_payload);
     print Dumper($result);
 };

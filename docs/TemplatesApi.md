@@ -23,7 +23,7 @@ Delete Template
 
 Delete template with the specified name. Required Access Level: ModifyTemplates
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::TemplatesApi;
@@ -37,7 +37,7 @@ my $api_instance = ElasticEmail::TemplatesApi->new(
 
 my $name = Template01; # string | Name of template.
 
-eval { 
+eval {
     $api_instance->templates_by_name_delete(name => $name);
 };
 if ($@) {
@@ -73,7 +73,7 @@ Load Template
 
 Load detailed information of the specified template. Required Access Level: ViewTemplates
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::TemplatesApi;
@@ -87,7 +87,7 @@ my $api_instance = ElasticEmail::TemplatesApi->new(
 
 my $name = Template01; # string | Name of template.
 
-eval { 
+eval {
     my $result = $api_instance->templates_by_name_get(name => $name);
     print Dumper($result);
 };
@@ -124,7 +124,7 @@ Update Template
 
 Update existing template, overwriting existing data. Required Access Level: ModifyTemplates
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::TemplatesApi;
@@ -139,7 +139,7 @@ my $api_instance = ElasticEmail::TemplatesApi->new(
 my $name = Template01; # string | Name of template.
 my $template_payload = ElasticEmail::Object::TemplatePayload->new(); # TemplatePayload | 
 
-eval { 
+eval {
     my $result = $api_instance->templates_by_name_put(name => $name, template_payload => $template_payload);
     print Dumper($result);
 };
@@ -177,7 +177,7 @@ Load Templates
 
 Returns a list of templates for the specified type. Required Access Level: ViewTemplates
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::TemplatesApi;
@@ -194,7 +194,7 @@ my $template_types = [(new ElasticEmail.TemplateType())]; # ARRAY[TemplateType] 
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->templates_get(scope_type => $scope_type, template_types => $template_types, limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -234,7 +234,7 @@ Add Template
 
 Add a new Template. Required Access Level: ModifyTemplates
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::TemplatesApi;
@@ -248,7 +248,7 @@ my $api_instance = ElasticEmail::TemplatesApi->new(
 
 my $template_payload = ElasticEmail::Object::TemplatePayload->new(); # TemplatePayload | 
 
-eval { 
+eval {
     my $result = $api_instance->templates_post(template_payload => $template_payload);
     print Dumper($result);
 };

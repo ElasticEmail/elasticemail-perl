@@ -24,7 +24,7 @@ Delete Route
 
 Deletes the Inbound Route. Required Access Level: ModifySettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -38,7 +38,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 
 my $id = "id_example"; # string | 
 
-eval { 
+eval {
     $api_instance->inboundroute_by_id_delete(id => $id);
 };
 if ($@) {
@@ -74,7 +74,7 @@ Get Route
 
 Load an Inbound Route. Required Access Level: ViewSettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -88,7 +88,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 
 my $id = 123456; # string | ID number of your attachment
 
-eval { 
+eval {
     my $result = $api_instance->inboundroute_by_id_get(id => $id);
     print Dumper($result);
 };
@@ -125,7 +125,7 @@ Update Route
 
 Update the Inbound Route. Required Access Level: ModifySettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -140,7 +140,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 my $id = "id_example"; # string | 
 my $inbound_payload = ElasticEmail::Object::InboundPayload->new(); # InboundPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->inboundroute_by_id_put(id => $id, inbound_payload => $inbound_payload);
     print Dumper($result);
 };
@@ -178,7 +178,7 @@ Get Routes
 
 Get all your Inbound Routes. Required Access Level: ViewSettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -191,7 +191,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 );
 
 
-eval { 
+eval {
     my $result = $api_instance->inboundroute_get();
     print Dumper($result);
 };
@@ -225,7 +225,7 @@ Update Sorting
 
 Required Access Level: ViewSettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -239,7 +239,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 
 my $sort_order_item = [ElasticEmail::Object::ARRAY[SortOrderItem]->new()]; # ARRAY[SortOrderItem] | Change the ordering of inbound routes for when matching the inbound
 
-eval { 
+eval {
     my $result = $api_instance->inboundroute_order_put(sort_order_item => $sort_order_item);
     print Dumper($result);
 };
@@ -276,7 +276,7 @@ Create Route
 
 Create new Inbound Route. Required Access Level: ModifySettings
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::InboundRouteApi;
@@ -290,7 +290,7 @@ my $api_instance = ElasticEmail::InboundRouteApi->new(
 
 my $inbound_payload = ElasticEmail::Object::InboundPayload->new(); # InboundPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->inboundroute_post(inbound_payload => $inbound_payload);
     print Dumper($result);
 };

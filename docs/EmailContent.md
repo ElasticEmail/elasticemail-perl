@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **subject** | **string** | Default subject of email. | [optional] 
 **template_name** | **string** | Name of template. | [optional] 
 **attach_files** | **ARRAY[string]** | Names of previously uploaded files that should be sent as downloadable attachments | [optional] 
-**utm** | [**Utm**](Utm.md) | Utm marketing data to be attached to every link in this e-mail. | [optional] 
+**utm** | [**Utm**](Utm.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

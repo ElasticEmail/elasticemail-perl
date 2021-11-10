@@ -22,7 +22,7 @@ package ElasticEmail::ContactsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # contacts_by_email_delete
 #
 # Delete Contact
-# 
+#
 # @param string $email Proper email address. (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_by_email_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_by_email_delete' } = {
         summary => 'Delete Contact',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub contacts_by_email_delete {
 # contacts_by_email_get
 #
 # Load Contact
-# 
+#
 # @param string $email Proper email address. (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub contacts_by_email_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_by_email_get' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_by_email_get' } = {
         summary => 'Load Contact',
         params => $params,
         returns => 'Contact',
@@ -182,7 +182,7 @@ sub contacts_by_email_get {
 # contacts_by_email_history_get
 #
 # Load History
-# 
+#
 # @param string $email Proper email address. (required)
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -204,7 +204,7 @@ sub contacts_by_email_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_by_email_history_get' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_by_email_history_get' } = {
         summary => 'Load History',
         params => $params,
         returns => 'ARRAY[ContactHistory]',
@@ -271,7 +271,7 @@ sub contacts_by_email_history_get {
 # contacts_by_email_put
 #
 # Update Contact
-# 
+#
 # @param string $email Proper email address. (required)
 # @param ContactUpdatePayload $contact_update_payload  (required)
 {
@@ -287,7 +287,7 @@ sub contacts_by_email_history_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_by_email_put' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_by_email_put' } = {
         summary => 'Update Contact',
         params => $params,
         returns => 'Contact',
@@ -354,7 +354,7 @@ sub contacts_by_email_put {
 # contacts_delete_post
 #
 # Delete Contacts Bulk
-# 
+#
 # @param EmailsPayload $emails_payload Provide either rule or a list of emails, not both. (required)
 {
     my $params = {
@@ -364,7 +364,7 @@ sub contacts_by_email_put {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_delete_post' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_delete_post' } = {
         summary => 'Delete Contacts Bulk',
         params => $params,
         returns => undef,
@@ -415,7 +415,7 @@ sub contacts_delete_post {
 # contacts_export_by_id_status_get
 #
 # Check Export Status
-# 
+#
 # @param string $id ID of the exported file (required)
 {
     my $params = {
@@ -425,7 +425,7 @@ sub contacts_delete_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_export_by_id_status_get' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_export_by_id_status_get' } = {
         summary => 'Check Export Status',
         params => $params,
         returns => 'ExportStatus',
@@ -482,7 +482,7 @@ sub contacts_export_by_id_status_get {
 # contacts_export_post
 #
 # Export Contacts
-# 
+#
 # @param ExportFileFormats $file_format Format of the exported file (optional)
 # @param string $rule Query used for filtering. (optional)
 # @param ARRAY[string] $emails Comma delimited list of contact emails (optional)
@@ -516,7 +516,7 @@ sub contacts_export_by_id_status_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_export_post' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_export_post' } = {
         summary => 'Export Contacts',
         params => $params,
         returns => 'ExportLink',
@@ -586,7 +586,7 @@ sub contacts_export_post {
 # contacts_get
 #
 # Load Contacts
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -602,7 +602,7 @@ sub contacts_export_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_get' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_get' } = {
         summary => 'Load Contacts',
         params => $params,
         returns => 'ARRAY[Contact]',
@@ -657,7 +657,7 @@ sub contacts_get {
 # contacts_import_post
 #
 # Upload Contacts
-# 
+#
 # @param string $list_name Name of an existing list to add these contacts to (optional)
 # @param string $encoding_name In what encoding the file is uploaded (optional)
 # @param string $file  (optional)
@@ -679,7 +679,7 @@ sub contacts_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_import_post' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_import_post' } = {
         summary => 'Upload Contacts',
         params => $params,
         returns => undef,
@@ -720,7 +720,7 @@ sub contacts_import_post {
         $form_params->{'file'} = [] unless defined $form_params->{'file'};
         push @{$form_params->{'file'}}, $args{'file'};
             }
-    
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(apikey )];
@@ -736,7 +736,7 @@ sub contacts_import_post {
 # contacts_post
 #
 # Add Contact
-# 
+#
 # @param ARRAY[ContactPayload] $contact_payload  (required)
 # @param ARRAY[string] $listnames Names of lists to which the uploaded contacts should be added to (optional)
 {
@@ -752,7 +752,7 @@ sub contacts_import_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'contacts_post' } = { 
+    __PACKAGE__->method_documentation->{ 'contacts_post' } = {
         summary => 'Add Contact',
         params => $params,
         returns => 'ARRAY[Contact]',

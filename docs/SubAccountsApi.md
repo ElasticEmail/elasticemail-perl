@@ -24,7 +24,7 @@ Add, Subtract Email Credits
 
 Update email credits of a subaccount by the given amount. Required Access Level: ModifySubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -39,7 +39,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 my $email = mail@example.com; # string | Email address of Sub-Account
 my $subaccount_email_credits_payload = ElasticEmail::Object::SubaccountEmailCreditsPayload->new(); # SubaccountEmailCreditsPayload | Amount of email credits to add or subtract from the current SubAccount email credits pool (positive or negative value)
 
-eval { 
+eval {
     $api_instance->subaccounts_by_email_credits_patch(email => $email, subaccount_email_credits_payload => $subaccount_email_credits_payload);
 };
 if ($@) {
@@ -76,7 +76,7 @@ Delete SubAccount
 
 Deletes specified SubAccount. An email will be sent to confirm this change. Required Access Level: ModifySubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -90,7 +90,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 
 my $email = mail@example.com; # string | Email address of Sub-Account
 
-eval { 
+eval {
     $api_instance->subaccounts_by_email_delete(email => $email);
 };
 if ($@) {
@@ -126,7 +126,7 @@ Load SubAccount
 
 Returns details for the specified SubAccount. Required Access Level: ViewSubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -140,7 +140,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 
 my $email = mail@example.com; # string | Email address of Sub-Account
 
-eval { 
+eval {
     my $result = $api_instance->subaccounts_by_email_get(email => $email);
     print Dumper($result);
 };
@@ -177,7 +177,7 @@ Update SubAccount Email Settings
 
 Update SubAccount email settings. Required Access Level: ModifySubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -192,7 +192,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 my $email = "email_example"; # string | 
 my $subaccount_email_settings = ElasticEmail::Object::SubaccountEmailSettings->new(); # SubaccountEmailSettings | Updated Email Settings
 
-eval { 
+eval {
     my $result = $api_instance->subaccounts_by_email_settings_email_put(email => $email, subaccount_email_settings => $subaccount_email_settings);
     print Dumper($result);
 };
@@ -230,7 +230,7 @@ Load SubAccounts
 
 Returns a list of all your SubAccounts. Required Access Level: ViewSubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -245,7 +245,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
 
-eval { 
+eval {
     my $result = $api_instance->subaccounts_get(limit => $limit, offset => $offset);
     print Dumper($result);
 };
@@ -283,7 +283,7 @@ Add SubAccount
 
 Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the 'subaccount' parameter. Required Access Level: ModifySubAccounts
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SubAccountsApi;
@@ -297,7 +297,7 @@ my $api_instance = ElasticEmail::SubAccountsApi->new(
 
 my $subaccount_payload = ElasticEmail::Object::SubaccountPayload->new(); # SubaccountPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->subaccounts_post(subaccount_payload => $subaccount_payload);
     print Dumper($result);
 };

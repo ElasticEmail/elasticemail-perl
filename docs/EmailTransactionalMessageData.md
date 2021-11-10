@@ -8,9 +8,9 @@ use ElasticEmail::Object::EmailTransactionalMessageData;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipients** | [**TransactionalRecipient**](TransactionalRecipient.md) | List of transactional recipients | 
-**content** | [**EmailContent**](EmailContent.md) | Proper e-mail content | [optional] 
-**options** | [**Options**](Options.md) | E-mail configuration | [optional] 
+**recipients** | [**TransactionalRecipient**](TransactionalRecipient.md) |  | 
+**content** | [**EmailContent**](EmailContent.md) |  | [optional] 
+**options** | [**Options**](Options.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

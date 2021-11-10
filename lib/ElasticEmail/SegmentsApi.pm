@@ -22,7 +22,7 @@ package ElasticEmail::SegmentsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # segments_by_name_delete
 #
 # Delete Segment
-# 
+#
 # @param string $name Name of your segment. (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'segments_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'segments_by_name_delete' } = {
         summary => 'Delete Segment',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub segments_by_name_delete {
 # segments_by_name_get
 #
 # Load Segment
-# 
+#
 # @param string $name Name of the segment you want to load. Will load all contacts if the &#39;All Contacts&#39; name has been provided (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub segments_by_name_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'segments_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'segments_by_name_get' } = {
         summary => 'Load Segment',
         params => $params,
         returns => 'Segment',
@@ -182,7 +182,7 @@ sub segments_by_name_get {
 # segments_by_name_put
 #
 # Update Segment
-# 
+#
 # @param string $name Name of your segment. (required)
 # @param SegmentPayload $segment_payload  (required)
 {
@@ -198,7 +198,7 @@ sub segments_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'segments_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'segments_by_name_put' } = {
         summary => 'Update Segment',
         params => $params,
         returns => 'Segment',
@@ -265,7 +265,7 @@ sub segments_by_name_put {
 # segments_get
 #
 # Load Segments
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -281,7 +281,7 @@ sub segments_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'segments_get' } = { 
+    __PACKAGE__->method_documentation->{ 'segments_get' } = {
         summary => 'Load Segments',
         params => $params,
         returns => 'ARRAY[Segment]',
@@ -336,7 +336,7 @@ sub segments_get {
 # segments_post
 #
 # Add Segment
-# 
+#
 # @param SegmentPayload $segment_payload  (required)
 {
     my $params = {
@@ -346,7 +346,7 @@ sub segments_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'segments_post' } = { 
+    __PACKAGE__->method_documentation->{ 'segments_post' } = {
         summary => 'Add Segment',
         params => $params,
         returns => 'Segment',

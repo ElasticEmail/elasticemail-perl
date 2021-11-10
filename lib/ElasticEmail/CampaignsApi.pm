@@ -22,7 +22,7 @@ package ElasticEmail::CampaignsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # campaigns_by_name_delete
 #
 # Delete Campaign
-# 
+#
 # @param string $name Name of Campaign to delete (required)
 {
     my $params = {
@@ -62,7 +62,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'campaigns_by_name_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'campaigns_by_name_delete' } = {
         summary => 'Delete Campaign',
         params => $params,
         returns => undef,
@@ -115,7 +115,7 @@ sub campaigns_by_name_delete {
 # campaigns_by_name_get
 #
 # Load Campaign
-# 
+#
 # @param string $name Name of Campaign to get (required)
 {
     my $params = {
@@ -125,7 +125,7 @@ sub campaigns_by_name_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'campaigns_by_name_get' } = { 
+    __PACKAGE__->method_documentation->{ 'campaigns_by_name_get' } = {
         summary => 'Load Campaign',
         params => $params,
         returns => 'Campaign',
@@ -182,7 +182,7 @@ sub campaigns_by_name_get {
 # campaigns_by_name_put
 #
 # Update Campaign
-# 
+#
 # @param string $name Name of Campaign to update (required)
 # @param Campaign $campaign JSON representation of a campaign (required)
 {
@@ -198,7 +198,7 @@ sub campaigns_by_name_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'campaigns_by_name_put' } = { 
+    __PACKAGE__->method_documentation->{ 'campaigns_by_name_put' } = {
         summary => 'Update Campaign',
         params => $params,
         returns => 'Campaign',
@@ -265,7 +265,7 @@ sub campaigns_by_name_put {
 # campaigns_get
 #
 # Load Campaigns
-# 
+#
 # @param string $search Text fragment used for searching in Campaign name (using the &#39;contains&#39; rule) (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 # @param int $limit Maximum number of returned items. (optional)
@@ -287,7 +287,7 @@ sub campaigns_by_name_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'campaigns_get' } = { 
+    __PACKAGE__->method_documentation->{ 'campaigns_get' } = {
         summary => 'Load Campaigns',
         params => $params,
         returns => 'ARRAY[Campaign]',
@@ -347,7 +347,7 @@ sub campaigns_get {
 # campaigns_post
 #
 # Add Campaign
-# 
+#
 # @param Campaign $campaign JSON representation of a campaign (required)
 {
     my $params = {
@@ -357,7 +357,7 @@ sub campaigns_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'campaigns_post' } = { 
+    __PACKAGE__->method_documentation->{ 'campaigns_post' } = {
         summary => 'Add Campaign',
         params => $params,
         returns => 'Campaign',

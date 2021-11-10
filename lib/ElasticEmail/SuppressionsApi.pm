@@ -22,7 +22,7 @@ package ElasticEmail::SuppressionsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # suppressions_bounces_get
 #
 # Get Bounce List
-# 
+#
 # @param string $search Text fragment used for searching. (optional)
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -74,7 +74,7 @@ sub new {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_bounces_get' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_bounces_get' } = {
         summary => 'Get Bounce List',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -134,7 +134,7 @@ sub suppressions_bounces_get {
 # suppressions_bounces_import_post
 #
 # Add Bounces Async
-# 
+#
 # @param string $file  (optional)
 {
     my $params = {
@@ -144,7 +144,7 @@ sub suppressions_bounces_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_bounces_import_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_bounces_import_post' } = {
         summary => 'Add Bounces Async',
         params => $params,
         returns => undef,
@@ -175,7 +175,7 @@ sub suppressions_bounces_import_post {
         $form_params->{'file'} = [] unless defined $form_params->{'file'};
         push @{$form_params->{'file'}}, $args{'file'};
             }
-    
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(apikey )];
@@ -191,7 +191,7 @@ sub suppressions_bounces_import_post {
 # suppressions_bounces_post
 #
 # Add Bounces
-# 
+#
 # @param ARRAY[string] $request_body Emails to add as bounces. Limited to 1000 per request (required)
 {
     my $params = {
@@ -201,7 +201,7 @@ sub suppressions_bounces_import_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_bounces_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_bounces_post' } = {
         summary => 'Add Bounces',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -256,7 +256,7 @@ sub suppressions_bounces_post {
 # suppressions_by_email_delete
 #
 # Delete Suppression
-# 
+#
 # @param string $email Proper email address. (required)
 {
     my $params = {
@@ -266,7 +266,7 @@ sub suppressions_bounces_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_by_email_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_by_email_delete' } = {
         summary => 'Delete Suppression',
         params => $params,
         returns => undef,
@@ -319,7 +319,7 @@ sub suppressions_by_email_delete {
 # suppressions_by_email_get
 #
 # Get Suppression
-# 
+#
 # @param string $email Proper email address. (required)
 {
     my $params = {
@@ -329,7 +329,7 @@ sub suppressions_by_email_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_by_email_get' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_by_email_get' } = {
         summary => 'Get Suppression',
         params => $params,
         returns => 'Suppression',
@@ -386,7 +386,7 @@ sub suppressions_by_email_get {
 # suppressions_complaints_get
 #
 # Get Complaints List
-# 
+#
 # @param string $search Text fragment used for searching. (optional)
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -408,7 +408,7 @@ sub suppressions_by_email_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_complaints_get' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_complaints_get' } = {
         summary => 'Get Complaints List',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -468,7 +468,7 @@ sub suppressions_complaints_get {
 # suppressions_complaints_import_post
 #
 # Add Complaints Async
-# 
+#
 # @param string $file  (optional)
 {
     my $params = {
@@ -478,7 +478,7 @@ sub suppressions_complaints_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_complaints_import_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_complaints_import_post' } = {
         summary => 'Add Complaints Async',
         params => $params,
         returns => undef,
@@ -509,7 +509,7 @@ sub suppressions_complaints_import_post {
         $form_params->{'file'} = [] unless defined $form_params->{'file'};
         push @{$form_params->{'file'}}, $args{'file'};
             }
-    
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(apikey )];
@@ -525,7 +525,7 @@ sub suppressions_complaints_import_post {
 # suppressions_complaints_post
 #
 # Add Complaints
-# 
+#
 # @param ARRAY[string] $request_body Emails to add as complaints. Limited to 1000 per request (required)
 {
     my $params = {
@@ -535,7 +535,7 @@ sub suppressions_complaints_import_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_complaints_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_complaints_post' } = {
         summary => 'Add Complaints',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -590,7 +590,7 @@ sub suppressions_complaints_post {
 # suppressions_get
 #
 # Get Suppressions
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -606,7 +606,7 @@ sub suppressions_complaints_post {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_get' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_get' } = {
         summary => 'Get Suppressions',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -661,7 +661,7 @@ sub suppressions_get {
 # suppressions_unsubscribes_get
 #
 # Get Unsubscribes List
-# 
+#
 # @param string $search Text fragment used for searching. (optional)
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -683,7 +683,7 @@ sub suppressions_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_get' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_get' } = {
         summary => 'Get Unsubscribes List',
         params => $params,
         returns => 'ARRAY[Suppression]',
@@ -743,7 +743,7 @@ sub suppressions_unsubscribes_get {
 # suppressions_unsubscribes_import_post
 #
 # Add Unsubscribes Async
-# 
+#
 # @param string $file  (optional)
 {
     my $params = {
@@ -753,7 +753,7 @@ sub suppressions_unsubscribes_get {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_import_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_import_post' } = {
         summary => 'Add Unsubscribes Async',
         params => $params,
         returns => undef,
@@ -784,7 +784,7 @@ sub suppressions_unsubscribes_import_post {
         $form_params->{'file'} = [] unless defined $form_params->{'file'};
         push @{$form_params->{'file'}}, $args{'file'};
             }
-    
+
     my $_body_data;
     # authentication setting, if any
     my $auth_settings = [qw(apikey )];
@@ -800,7 +800,7 @@ sub suppressions_unsubscribes_import_post {
 # suppressions_unsubscribes_post
 #
 # Add Unsubscribes
-# 
+#
 # @param ARRAY[string] $request_body Emails to add as unsubscribes. Limited to 1000 per request (required)
 {
     my $params = {
@@ -810,7 +810,7 @@ sub suppressions_unsubscribes_import_post {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_post' } = { 
+    __PACKAGE__->method_documentation->{ 'suppressions_unsubscribes_post' } = {
         summary => 'Add Unsubscribes',
         params => $params,
         returns => 'ARRAY[Suppression]',

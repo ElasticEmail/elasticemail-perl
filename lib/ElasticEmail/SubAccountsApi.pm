@@ -22,7 +22,7 @@ package ElasticEmail::SubAccountsApi;
 require 5.6.0;
 use strict;
 use warnings;
-use utf8; 
+use utf8;
 use Exporter;
 use Carp qw( croak );
 use Log::Any qw($log);
@@ -52,7 +52,7 @@ sub new {
 # subaccounts_by_email_credits_patch
 #
 # Add, Subtract Email Credits
-# 
+#
 # @param string $email Email address of Sub-Account (required)
 # @param SubaccountEmailCreditsPayload $subaccount_email_credits_payload Amount of email credits to add or subtract from the current SubAccount email credits pool (positive or negative value) (required)
 {
@@ -68,7 +68,7 @@ sub new {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_credits_patch' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_credits_patch' } = {
         summary => 'Add, Subtract Email Credits',
         params => $params,
         returns => undef,
@@ -131,7 +131,7 @@ sub subaccounts_by_email_credits_patch {
 # subaccounts_by_email_delete
 #
 # Delete SubAccount
-# 
+#
 # @param string $email Email address of Sub-Account (required)
 {
     my $params = {
@@ -141,7 +141,7 @@ sub subaccounts_by_email_credits_patch {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_delete' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_delete' } = {
         summary => 'Delete SubAccount',
         params => $params,
         returns => undef,
@@ -194,7 +194,7 @@ sub subaccounts_by_email_delete {
 # subaccounts_by_email_get
 #
 # Load SubAccount
-# 
+#
 # @param string $email Email address of Sub-Account (required)
 {
     my $params = {
@@ -204,7 +204,7 @@ sub subaccounts_by_email_delete {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_get' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_get' } = {
         summary => 'Load SubAccount',
         params => $params,
         returns => 'SubAccountInfo',
@@ -261,7 +261,7 @@ sub subaccounts_by_email_get {
 # subaccounts_by_email_settings_email_put
 #
 # Update SubAccount Email Settings
-# 
+#
 # @param string $email  (required)
 # @param SubaccountEmailSettings $subaccount_email_settings Updated Email Settings (required)
 {
@@ -277,7 +277,7 @@ sub subaccounts_by_email_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_settings_email_put' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_settings_email_put' } = {
         summary => 'Update SubAccount Email Settings',
         params => $params,
         returns => 'SubaccountEmailSettings',
@@ -344,7 +344,7 @@ sub subaccounts_by_email_settings_email_put {
 # subaccounts_get
 #
 # Load SubAccounts
-# 
+#
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
 {
@@ -360,7 +360,7 @@ sub subaccounts_by_email_settings_email_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_get' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_get' } = {
         summary => 'Load SubAccounts',
         params => $params,
         returns => 'ARRAY[SubAccountInfo]',
@@ -415,7 +415,7 @@ sub subaccounts_get {
 # subaccounts_post
 #
 # Add SubAccount
-# 
+#
 # @param SubaccountPayload $subaccount_payload  (required)
 {
     my $params = {
@@ -425,7 +425,7 @@ sub subaccounts_get {
         required => '1',
     },
     };
-    __PACKAGE__->method_documentation->{ 'subaccounts_post' } = { 
+    __PACKAGE__->method_documentation->{ 'subaccounts_post' } = {
         summary => 'Add SubAccount',
         params => $params,
         returns => 'SubAccountInfo',

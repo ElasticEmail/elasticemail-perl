@@ -8,9 +8,9 @@ use ElasticEmail::Object::EmailMessageData;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipients** | [**ARRAY[EmailRecipient]**](EmailRecipient.md) | List of recipients (visible to others) | 
-**content** | [**EmailContent**](EmailContent.md) | Proper e-mail content | [optional] 
-**options** | [**Options**](Options.md) | E-mail configuration | [optional] 
+**recipients** | [**ARRAY[EmailRecipient]**](EmailRecipient.md) | List of recipients | 
+**content** | [**EmailContent**](EmailContent.md) |  | [optional] 
+**options** | [**Options**](Options.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

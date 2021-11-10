@@ -28,7 +28,7 @@ Delete ApiKey
 
 Delete your existing ApiKey. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -43,7 +43,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the ApiKey
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKey should be deleted
 
-eval { 
+eval {
     $api_instance->security_apikeys_by_name_delete(name => $name, subaccount => $subaccount);
 };
 if ($@) {
@@ -80,7 +80,7 @@ Load ApiKey
 
 Load your existing ApiKey info. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -95,7 +95,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the ApiKey
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKey should be loaded
 
-eval { 
+eval {
     my $result = $api_instance->security_apikeys_by_name_get(name => $name, subaccount => $subaccount);
     print Dumper($result);
 };
@@ -133,7 +133,7 @@ Update ApiKey
 
 Update your existing ApiKey. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -148,7 +148,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the ApiKey
 my $api_key_payload = ElasticEmail::Object::ApiKeyPayload->new(); # ApiKeyPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->security_apikeys_by_name_put(name => $name, api_key_payload => $api_key_payload);
     print Dumper($result);
 };
@@ -186,7 +186,7 @@ List ApiKeys
 
 List all your existing ApiKeys. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -200,7 +200,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKeys should be loaded
 
-eval { 
+eval {
     my $result = $api_instance->security_apikeys_get(subaccount => $subaccount);
     print Dumper($result);
 };
@@ -237,7 +237,7 @@ Add ApiKey
 
 Add a new ApiKey. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -251,7 +251,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 
 my $api_key_payload = ElasticEmail::Object::ApiKeyPayload->new(); # ApiKeyPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->security_apikeys_post(api_key_payload => $api_key_payload);
     print Dumper($result);
 };
@@ -288,7 +288,7 @@ Delete SMTP Credential
 
 Delete your existing SMTP Credentials. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -303,7 +303,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the SMTP Credential
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which credential should be deleted
 
-eval { 
+eval {
     $api_instance->security_smtp_by_name_delete(name => $name, subaccount => $subaccount);
 };
 if ($@) {
@@ -340,7 +340,7 @@ Load SMTP Credential
 
 Load your existing SMTP Credential info. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -355,7 +355,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the SMTP Credential
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which credential should be loaded
 
-eval { 
+eval {
     my $result = $api_instance->security_smtp_by_name_get(name => $name, subaccount => $subaccount);
     print Dumper($result);
 };
@@ -393,7 +393,7 @@ Update SMTP Credential
 
 Update your existing SMTP Credentials. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -408,7 +408,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 my $name = "name_example"; # string | Name of the SMTP Credential
 my $smtp_credentials_payload = ElasticEmail::Object::SmtpCredentialsPayload->new(); # SmtpCredentialsPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->security_smtp_by_name_put(name => $name, smtp_credentials_payload => $smtp_credentials_payload);
     print Dumper($result);
 };
@@ -446,7 +446,7 @@ List SMTP Credentials
 
 List all your existing SMTP Credentials. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -460,7 +460,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 
 my $subaccount = "subaccount_example"; # string | Email of the subaccount of which credentials should be listed
 
-eval { 
+eval {
     my $result = $api_instance->security_smtp_get(subaccount => $subaccount);
     print Dumper($result);
 };
@@ -497,7 +497,7 @@ Add SMTP Credential
 
 Add new SMTP Credential. Required Access Level: Security
 
-### Example 
+### Example
 ```perl
 use Data::Dumper;
 use ElasticEmail::SecurityApi;
@@ -511,7 +511,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 
 my $smtp_credentials_payload = ElasticEmail::Object::SmtpCredentialsPayload->new(); # SmtpCredentialsPayload | 
 
-eval { 
+eval {
     my $result = $api_instance->security_smtp_post(smtp_credentials_payload => $smtp_credentials_payload);
     print Dumper($result);
 };
