@@ -209,6 +209,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'valid_sender_domain_only' => {
+        datatype => 'boolean',
+        base_name => 'ValidSenderDomainOnly',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -218,7 +225,8 @@ __PACKAGE__->openapi_types( {
     'daily_send_limit' => 'int',
     'max_contacts' => 'int',
     'enable_private_ip_purchase' => 'boolean',
-    'pool_name' => 'string'
+    'pool_name' => 'string',
+    'valid_sender_domain_only' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -228,7 +236,8 @@ __PACKAGE__->attribute_map( {
     'daily_send_limit' => 'DailySendLimit',
     'max_contacts' => 'MaxContacts',
     'enable_private_ip_purchase' => 'EnablePrivateIPPurchase',
-    'pool_name' => 'PoolName'
+    'pool_name' => 'PoolName',
+    'valid_sender_domain_only' => 'ValidSenderDomainOnly'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
