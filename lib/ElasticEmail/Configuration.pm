@@ -26,7 +26,7 @@ use utf8;
 use Log::Any qw($log);
 use Carp;
 
-use constant VERSION => '4.0.17';
+use constant VERSION => '4.0.18';
 
 =head1 Name
 
@@ -46,7 +46,7 @@ default: 180
 
 String. custom UserAgent header
 
-default: OpenAPI-Generator/4.0.17/perl
+default: OpenAPI-Generator/4.0.18/perl
 
 =item api_key: (optional)
 
@@ -95,7 +95,7 @@ sub new {
 
     # class/static variables
     $p{http_timeout} //= 180;
-    $p{http_user_agent} //= 'OpenAPI-Generator/4.0.17/perl';
+    $p{http_user_agent} //= 'OpenAPI-Generator/4.0.18/perl';
 
     # authentication setting
     $p{api_key} //= {};
