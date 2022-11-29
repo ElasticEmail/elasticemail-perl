@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 
-This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
 
 The version of the OpenAPI document: 4.0.0
 Contact: support@elasticemail.com
@@ -175,95 +175,6 @@ sub contacts_by_email_get {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('Contact', $response);
-    return $_response_object;
-}
-
-#
-# contacts_by_email_history_get
-#
-# Load History
-#
-# @param string $email Proper email address. (required)
-# @param int $limit Maximum number of returned items. (optional)
-# @param int $offset How many items should be returned ahead. (optional)
-{
-    my $params = {
-    'email' => {
-        data_type => 'string',
-        description => 'Proper email address.',
-        required => '1',
-    },
-    'limit' => {
-        data_type => 'int',
-        description => 'Maximum number of returned items.',
-        required => '0',
-    },
-    'offset' => {
-        data_type => 'int',
-        description => 'How many items should be returned ahead.',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'contacts_by_email_history_get' } = {
-        summary => 'Load History',
-        params => $params,
-        returns => 'ARRAY[ContactHistory]',
-        };
-}
-# @return ARRAY[ContactHistory]
-#
-sub contacts_by_email_history_get {
-    my ($self, %args) = @_;
-
-    # verify the required parameter 'email' is set
-    unless (exists $args{'email'}) {
-      croak("Missing the required parameter 'email' when calling contacts_by_email_history_get");
-    }
-
-    # parse inputs
-    my $_resource_path = '/contacts/{email}/history';
-
-    my $_method = 'GET';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
-
-    # query params
-    if ( exists $args{'limit'}) {
-        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
-    }
-
-    # query params
-    if ( exists $args{'offset'}) {
-        $query_params->{'offset'} = $self->{api_client}->to_query_value($args{'offset'});
-    }
-
-    # path params
-    if ( exists $args{'email'}) {
-        my $_base_variable = "{" . "email" . "}";
-        my $_base_value = $self->{api_client}->to_path_value($args{'email'});
-        $_resource_path =~ s/$_base_variable/$_base_value/g;
-    }
-
-    my $_body_data;
-    # authentication setting, if any
-    my $auth_settings = [qw(apikey )];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('ARRAY[ContactHistory]', $response);
     return $_response_object;
 }
 
@@ -660,6 +571,7 @@ sub contacts_get {
 #
 # @param string $list_name Name of an existing list to add these contacts to (optional)
 # @param string $encoding_name In what encoding the file is uploaded (optional)
+# @param string $file_url Optional url of csv to import (optional)
 # @param string $file  (optional)
 {
     my $params = {
@@ -671,6 +583,11 @@ sub contacts_get {
     'encoding_name' => {
         data_type => 'string',
         description => 'In what encoding the file is uploaded',
+        required => '0',
+    },
+    'file_url' => {
+        data_type => 'string',
+        description => 'Optional url of csv to import',
         required => '0',
     },
     'file' => {
@@ -713,6 +630,11 @@ sub contacts_import_post {
     # query params
     if ( exists $args{'encoding_name'}) {
         $query_params->{'encodingName'} = $self->{api_client}->to_query_value($args{'encoding_name'});
+    }
+
+    # query params
+    if ( exists $args{'file_url'}) {
+        $query_params->{'fileUrl'} = $self->{api_client}->to_query_value($args{'file_url'});
     }
 
     # form params

@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **custom_fields** | **HASH[string,string]** | A key-value collection of custom contact fields which can be used in the system. | [optional] 
 **consent** | [**ConsentData**](ConsentData.md) |  | [optional] 
 **source** | [**ContactSource**](ContactSource.md) |  | [optional] 
-**date_added** | **DateTime** | Date of creation in YYYY-MM-DDThh:ii:ss format | [optional] 
-**date_updated** | **DateTime** | Last change date | [optional] 
-**status_change_date** | **DateTime** | Date of last status change. | [optional] 
+**date_added** | **DATE_TIME** | Date of creation in YYYY-MM-DDThh:ii:ss format | [optional] 
+**date_updated** | **DATE_TIME** | Last change date | [optional] 
+**status_change_date** | **DATE_TIME** | Date of last status change. | [optional] 
 **activity** | [**ContactActivity**](ContactActivity.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

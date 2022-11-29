@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 
-This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
 
 The version of the OpenAPI document: 4.0.0
 Contact: support@elasticemail.com
@@ -54,8 +54,8 @@ sub new {
 # Load Email Events
 #
 # @param string $transactionid ID number of transaction (required)
-# @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-# @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param EventsOrderBy $order_by  (optional)
 # @param int $limit Maximum number of returned items. (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -67,12 +67,12 @@ sub new {
         required => '1',
     },
     'from' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Starting date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
     'to' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Ending date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
@@ -177,8 +177,8 @@ sub events_by_transactionid_get {
 #
 # @param string $name Name of selected channel. (required)
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
-# @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-# @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param ExportFileFormats $file_format Format of the exported file (optional)
 # @param CompressionFormat $compression_format FileResponse compression format. None or Zip. (optional)
 # @param string $file_name Name of your file including extension. (optional)
@@ -195,12 +195,12 @@ sub events_by_transactionid_get {
         required => '0',
     },
     'from' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Starting date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
     'to' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Ending date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
@@ -310,8 +310,8 @@ sub events_channels_by_name_export_post {
 #
 # @param string $name Name of selected channel. (required)
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
-# @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-# @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param EventsOrderBy $order_by  (optional)
 # @param int $limit How many items to load. Maximum for this request is 1000 items (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -328,12 +328,12 @@ sub events_channels_by_name_export_post {
         required => '0',
     },
     'from' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Starting date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
     'to' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Ending date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
@@ -576,8 +576,8 @@ sub events_export_by_id_status_get {
 # Export Events
 #
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
-# @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-# @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param ExportFileFormats $file_format Format of the exported file (optional)
 # @param CompressionFormat $compression_format FileResponse compression format. None or Zip. (optional)
 # @param string $file_name Name of your file including extension. (optional)
@@ -589,12 +589,12 @@ sub events_export_by_id_status_get {
         required => '0',
     },
     'from' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Starting date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
     'to' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Ending date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
@@ -691,8 +691,8 @@ sub events_export_post {
 # Load Events
 #
 # @param ARRAY[EventType] $event_types Types of Events to return (optional)
-# @param DateTime $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
-# @param DateTime $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $from Starting date for search in YYYY-MM-DDThh:mm:ss format. (optional)
+# @param DATE_TIME $to Ending date for search in YYYY-MM-DDThh:mm:ss format. (optional)
 # @param EventsOrderBy $order_by  (optional)
 # @param int $limit How many items to load. Maximum for this request is 1000 items (optional)
 # @param int $offset How many items should be returned ahead. (optional)
@@ -704,12 +704,12 @@ sub events_export_post {
         required => '0',
     },
     'from' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Starting date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },
     'to' => {
-        data_type => 'DateTime',
+        data_type => 'DATE_TIME',
         description => 'Ending date for search in YYYY-MM-DDThh:mm:ss format.',
         required => '0',
     },

@@ -11,7 +11,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**contacts_by_email_delete**](ContactsApi.md#contacts_by_email_delete) | **DELETE** /contacts/{email} | Delete Contact
 [**contacts_by_email_get**](ContactsApi.md#contacts_by_email_get) | **GET** /contacts/{email} | Load Contact
-[**contacts_by_email_history_get**](ContactsApi.md#contacts_by_email_history_get) | **GET** /contacts/{email}/history | Load History
 [**contacts_by_email_put**](ContactsApi.md#contacts_by_email_put) | **PUT** /contacts/{email} | Update Contact
 [**contacts_delete_post**](ContactsApi.md#contacts_delete_post) | **POST** /contacts/delete | Delete Contacts Bulk
 [**contacts_export_by_id_status_get**](ContactsApi.md#contacts_export_by_id_status_get) | **GET** /contacts/export/{id}/status | Check Export Status
@@ -110,61 +109,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Contact**](Contact.md)
-
-### Authorization
-
-[apikey](../README.md#apikey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **contacts_by_email_history_get**
-> ARRAY[ContactHistory] contacts_by_email_history_get(email => $email, limit => $limit, offset => $offset)
-
-Load History
-
-Returns detailed history of specified Contact. Required Access Level: ViewContacts
-
-### Example
-```perl
-use Data::Dumper;
-use ElasticEmail::ContactsApi;
-my $api_instance = ElasticEmail::ContactsApi->new(
-
-    # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
-);
-
-my $email = mail@example.com; # string | Proper email address.
-my $limit = 100; # int | Maximum number of returned items.
-my $offset = 20; # int | How many items should be returned ahead.
-
-eval {
-    my $result = $api_instance->contacts_by_email_history_get(email => $email, limit => $limit, offset => $offset);
-    print Dumper($result);
-};
-if ($@) {
-    warn "Exception when calling ContactsApi->contacts_by_email_history_get: $@\n";
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **string**| Proper email address. | 
- **limit** | **int**| Maximum number of returned items. | [optional] 
- **offset** | **int**| How many items should be returned ahead. | [optional] 
-
-### Return type
-
-[**ARRAY[ContactHistory]**](ContactHistory.md)
 
 ### Authorization
 
@@ -444,7 +388,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **contacts_import_post**
-> contacts_import_post(list_name => $list_name, encoding_name => $encoding_name, file => $file)
+> contacts_import_post(list_name => $list_name, encoding_name => $encoding_name, file_url => $file_url, file => $file)
 
 Upload Contacts
 
@@ -464,10 +408,11 @@ my $api_instance = ElasticEmail::ContactsApi->new(
 
 my $list_name = "list_name_example"; # string | Name of an existing list to add these contacts to
 my $encoding_name = "encoding_name_example"; # string | In what encoding the file is uploaded
+my $file_url = "file_url_example"; # string | Optional url of csv to import
 my $file = "/path/to/file"; # string | 
 
 eval {
-    $api_instance->contacts_import_post(list_name => $list_name, encoding_name => $encoding_name, file => $file);
+    $api_instance->contacts_import_post(list_name => $list_name, encoding_name => $encoding_name, file_url => $file_url, file => $file);
 };
 if ($@) {
     warn "Exception when calling ContactsApi->contacts_import_post: $@\n";
@@ -480,6 +425,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **list_name** | **string**| Name of an existing list to add these contacts to | [optional] 
  **encoding_name** | **string**| In what encoding the file is uploaded | [optional] 
+ **file_url** | **string**| Optional url of csv to import | [optional] 
  **file** | **string****string**|  | [optional] 
 
 ### Return type

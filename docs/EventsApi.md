@@ -38,8 +38,8 @@ my $api_instance = ElasticEmail::EventsApi->new(
 );
 
 my $transactionid = TransactionID; # string | ID number of transaction
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy | 
 my $limit = 100; # int | Maximum number of returned items.
 my $offset = 20; # int | How many items should be returned ahead.
@@ -58,8 +58,8 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **transactionid** | **string**| ID number of transaction | 
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
  **order_by** | [**EventsOrderBy**](.md)|  | [optional] 
  **limit** | **int**| Maximum number of returned items. | [optional] 
  **offset** | **int**| How many items should be returned ahead. | [optional] 
@@ -100,8 +100,8 @@ my $api_instance = ElasticEmail::EventsApi->new(
 
 my $name = Channel01; # string | Name of selected channel.
 my $event_types = [(new ElasticEmail.EventType())]; # ARRAY[EventType] | Types of Events to return
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 my $file_format = new ElasticEmail.ExportFileFormats(); # ExportFileFormats | Format of the exported file
 my $compression_format = new ElasticEmail.CompressionFormat(); # CompressionFormat | FileResponse compression format. None or Zip.
 my $file_name = filename.txt; # string | Name of your file including extension.
@@ -121,8 +121,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Name of selected channel. | 
  **event_types** | [**ARRAY[EventType]**](EventType.md)| Types of Events to return | [optional] 
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
  **file_format** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] 
  **compression_format** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] 
  **file_name** | **string**| Name of your file including extension. | [optional] 
@@ -163,8 +163,8 @@ my $api_instance = ElasticEmail::EventsApi->new(
 
 my $name = Channel01; # string | Name of selected channel.
 my $event_types = [(new ElasticEmail.EventType())]; # ARRAY[EventType] | Types of Events to return
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy | 
 my $limit = 56; # int | How many items to load. Maximum for this request is 1000 items
 my $offset = 20; # int | How many items should be returned ahead.
@@ -184,8 +184,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Name of selected channel. | 
  **event_types** | [**ARRAY[EventType]**](EventType.md)| Types of Events to return | [optional] 
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
  **order_by** | [**EventsOrderBy**](.md)|  | [optional] 
  **limit** | **int**| How many items to load. Maximum for this request is 1000 items | [optional] 
  **offset** | **int**| How many items should be returned ahead. | [optional] 
@@ -327,8 +327,8 @@ my $api_instance = ElasticEmail::EventsApi->new(
 );
 
 my $event_types = [(new ElasticEmail.EventType())]; # ARRAY[EventType] | Types of Events to return
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 my $file_format = new ElasticEmail.ExportFileFormats(); # ExportFileFormats | Format of the exported file
 my $compression_format = new ElasticEmail.CompressionFormat(); # CompressionFormat | FileResponse compression format. None or Zip.
 my $file_name = filename.txt; # string | Name of your file including extension.
@@ -347,8 +347,8 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **event_types** | [**ARRAY[EventType]**](EventType.md)| Types of Events to return | [optional] 
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
  **file_format** | [**ExportFileFormats**](.md)| Format of the exported file | [optional] 
  **compression_format** | [**CompressionFormat**](.md)| FileResponse compression format. None or Zip. | [optional] 
  **file_name** | **string**| Name of your file including extension. | [optional] 
@@ -388,8 +388,8 @@ my $api_instance = ElasticEmail::EventsApi->new(
 );
 
 my $event_types = [(new ElasticEmail.EventType())]; # ARRAY[EventType] | Types of Events to return
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 my $order_by = new ElasticEmail.EventsOrderBy(); # EventsOrderBy | 
 my $limit = 56; # int | How many items to load. Maximum for this request is 1000 items
 my $offset = 20; # int | How many items should be returned ahead.
@@ -408,8 +408,8 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **event_types** | [**ARRAY[EventType]**](EventType.md)| Types of Events to return | [optional] 
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
  **order_by** | [**EventsOrderBy**](.md)|  | [optional] 
  **limit** | **int**| How many items to load. Maximum for this request is 1000 items | [optional] 
  **offset** | **int**| How many items should be returned ahead. | [optional] 

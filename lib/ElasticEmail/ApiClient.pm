@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 
-This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
 
 The version of the OpenAPI document: 4.0.0
 Contact: support@elasticemail.com
@@ -125,7 +125,7 @@ sub call_api {
         $_request = GET($_url, %$header_params);
     }
     elsif ($method eq 'HEAD') {
-        $_request = HEAD($_url,%$header_params); 
+        $_request = HEAD($_url,%$header_params);
     }
     elsif ($method eq 'DELETE') { #TODO support form data
         $_request = DELETE($_url, %$header_params);
@@ -253,10 +253,18 @@ sub deserialize
             }
         }
         return \@_values;
-    } elsif ($class eq 'DateTime') {
+    } elsif (grep /^$class$/, ('DATE_TIME', 'DATE')) {
         return DateTime->from_epoch(epoch => str2time($data));
-    } elsif (grep /^$class$/, ('string', 'int', 'float', 'bool', 'object')) {
+    } elsif ($class eq 'string') {
+        return undef unless defined $data;
+        return $data . q();
+    } elsif ($class eq 'object') {
         return $data;
+    } elsif (grep /^$class$/, ('int', 'float', 'double')) {
+        return undef unless defined $data;
+        return $data + 0;
+    } elsif ($class eq 'bool') {
+        return !!$data;
     } else { # model
         my $_instance = use_module("ElasticEmail::Object::$class")->new;
         if (ref $data eq "HASH") {

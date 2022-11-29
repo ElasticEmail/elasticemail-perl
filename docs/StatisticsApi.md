@@ -243,8 +243,8 @@ my $api_instance = ElasticEmail::StatisticsApi->new(
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
 
-my $from = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Starting date for search in YYYY-MM-DDThh:mm:ss format.
-my $to = DateTime->from_epoch(epoch => str2time('null')); # DateTime | Ending date for search in YYYY-MM-DDThh:mm:ss format.
+my $from = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Starting date for search in YYYY-MM-DDThh:mm:ss format.
+my $to = DateTime->from_epoch(epoch => str2time('null')); # DATE_TIME | Ending date for search in YYYY-MM-DDThh:mm:ss format.
 
 eval {
     my $result = $api_instance->statistics_get(from => $from, to => $to);
@@ -259,8 +259,8 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **DateTime**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | 
- **to** | **DateTime**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
+ **from** | **DATE_TIME**| Starting date for search in YYYY-MM-DDThh:mm:ss format. | 
+ **to** | **DATE_TIME**| Ending date for search in YYYY-MM-DDThh:mm:ss format. | [optional] 
 
 ### Return type
 

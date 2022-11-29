@@ -9,7 +9,7 @@ use ElasticEmail::Object::SmtpCredentialsPayload;
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** | Name of the Credential for ease of reference. It must be a valid email address. | 
-**expires** | **DateTime** | Date this SmtpCredential expires. | [optional] 
+**expires** | **DATE_TIME** | Date this SmtpCredential expires. | [optional] 
 **restrict_access_to_ip_range** | **ARRAY[string]** | Which IPs can use this SmtpCredential | [optional] 
 **subaccount** | **string** | Email of the subaccount for which this SmtpCredential should be created | [optional] 
 
