@@ -343,132 +343,40 @@ use ElasticEmail::Object::VerificationStatus;
 ````
 
 # GETTING STARTED
-Put the Perl SDK under the 'lib' folder in your project directory, then run the following
+
+Below is a code snippet that will allow you to send your first email with us. Please make sure that you have registered an account and created an API key before trying to run the code. Put the Perl SDK under the 'lib' folder in your project directory, then run the following
+
 ```perl
-#!/usr/bin/perl
-use lib 'lib';
-use strict;
-use warnings;
-# load the API package
-use ElasticEmail::CampaignsApi;
-use ElasticEmail::ContactsApi;
 use ElasticEmail::EmailsApi;
-use ElasticEmail::EventsApi;
-use ElasticEmail::FilesApi;
-use ElasticEmail::InboundRouteApi;
-use ElasticEmail::ListsApi;
-use ElasticEmail::SecurityApi;
-use ElasticEmail::SegmentsApi;
-use ElasticEmail::StatisticsApi;
-use ElasticEmail::SubAccountsApi;
-use ElasticEmail::SuppressionsApi;
-use ElasticEmail::TemplatesApi;
-use ElasticEmail::VerificationsApi;
-
-# load the models
-use ElasticEmail::Object::AccessLevel;
-use ElasticEmail::Object::AccountStatusEnum;
-use ElasticEmail::Object::ApiKey;
-use ElasticEmail::Object::ApiKeyPayload;
-use ElasticEmail::Object::BodyContentType;
-use ElasticEmail::Object::BodyPart;
-use ElasticEmail::Object::Campaign;
-use ElasticEmail::Object::CampaignOptions;
-use ElasticEmail::Object::CampaignRecipient;
-use ElasticEmail::Object::CampaignStatus;
-use ElasticEmail::Object::CampaignTemplate;
-use ElasticEmail::Object::ChannelLogStatusSummary;
-use ElasticEmail::Object::CompressionFormat;
-use ElasticEmail::Object::ConsentData;
-use ElasticEmail::Object::ConsentTracking;
-use ElasticEmail::Object::Contact;
-use ElasticEmail::Object::ContactActivity;
-use ElasticEmail::Object::ContactPayload;
-use ElasticEmail::Object::ContactSource;
-use ElasticEmail::Object::ContactStatus;
-use ElasticEmail::Object::ContactUpdatePayload;
-use ElasticEmail::Object::ContactsList;
-use ElasticEmail::Object::DeliveryOptimizationType;
-use ElasticEmail::Object::EmailContent;
-use ElasticEmail::Object::EmailData;
-use ElasticEmail::Object::EmailMessageData;
-use ElasticEmail::Object::EmailRecipient;
-use ElasticEmail::Object::EmailSend;
-use ElasticEmail::Object::EmailStatus;
-use ElasticEmail::Object::EmailTransactionalMessageData;
-use ElasticEmail::Object::EmailValidationResult;
-use ElasticEmail::Object::EmailValidationStatus;
-use ElasticEmail::Object::EmailView;
-use ElasticEmail::Object::EmailsPayload;
-use ElasticEmail::Object::EncodingType;
-use ElasticEmail::Object::EventType;
-use ElasticEmail::Object::EventsOrderBy;
-use ElasticEmail::Object::ExportFileFormats;
-use ElasticEmail::Object::ExportLink;
-use ElasticEmail::Object::ExportStatus;
-use ElasticEmail::Object::FileInfo;
-use ElasticEmail::Object::FilePayload;
-use ElasticEmail::Object::FileUploadResult;
-use ElasticEmail::Object::InboundPayload;
-use ElasticEmail::Object::InboundRoute;
-use ElasticEmail::Object::InboundRouteActionType;
-use ElasticEmail::Object::InboundRouteFilterType;
-use ElasticEmail::Object::ListPayload;
-use ElasticEmail::Object::ListUpdatePayload;
-use ElasticEmail::Object::LogJobStatus;
-use ElasticEmail::Object::LogStatusSummary;
-use ElasticEmail::Object::MergeEmailPayload;
-use ElasticEmail::Object::MessageAttachment;
-use ElasticEmail::Object::MessageCategory;
-use ElasticEmail::Object::NewApiKey;
-use ElasticEmail::Object::NewSmtpCredentials;
-use ElasticEmail::Object::Options;
-use ElasticEmail::Object::RecipientEvent;
-use ElasticEmail::Object::Segment;
-use ElasticEmail::Object::SegmentPayload;
-use ElasticEmail::Object::SmtpCredentials;
-use ElasticEmail::Object::SmtpCredentialsPayload;
-use ElasticEmail::Object::SortOrderItem;
-use ElasticEmail::Object::SplitOptimizationType;
-use ElasticEmail::Object::SplitOptions;
-use ElasticEmail::Object::SubAccountInfo;
-use ElasticEmail::Object::SubaccountEmailCreditsPayload;
-use ElasticEmail::Object::SubaccountEmailSettings;
-use ElasticEmail::Object::SubaccountEmailSettingsPayload;
-use ElasticEmail::Object::SubaccountPayload;
-use ElasticEmail::Object::SubaccountSettingsInfo;
-use ElasticEmail::Object::SubaccountSettingsInfoPayload;
-use ElasticEmail::Object::Suppression;
-use ElasticEmail::Object::Template;
-use ElasticEmail::Object::TemplatePayload;
-use ElasticEmail::Object::TemplateScope;
-use ElasticEmail::Object::TemplateType;
 use ElasticEmail::Object::TransactionalRecipient;
-use ElasticEmail::Object::Utm;
-use ElasticEmail::Object::VerificationFileResult;
-use ElasticEmail::Object::VerificationFileResultDetails;
-use ElasticEmail::Object::VerificationStatus;
+use ElasticEmail::Object::EmailTransactionalMessageData;
+use ElasticEmail::Object::BodyPart;
 
-# for displaying the API response data
-use Data::Dumper;
-
-
-my $api_instance = ElasticEmail::CampaignsApi->new(
-    # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
-    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+my $api_instance = ElasticEmail::EmailsApi->new(
+    api_key => {'X-ElasticEmail-ApiKey' => '<your API key>'},
 );
 
-my $name = "name_example"; # string | Name of Campaign to delete
+my $email_transactional_message_data = ElasticEmail::Object::EmailTransactionalMessageData->new(); 
+my $recipient = ElasticEmail::Object::TransactionalRecipient->new();
+ 
+$recipient->to(['<to address>']);
+$email_transactional_message_data->recipients($recipient);
+ 
+ 
+my $content = ElasticEmail::Object::EmailContent->new();
+ 
+my $body = ElasticEmail::Object::BodyPart->new();
+$body->content('test');
+my $body_content_type = 'HTML';
+$body->content_type($body_content_type);
+$content->body([$body]);
+ 
+$content->from('<from address>');
+$content->subject('test');
+ 
+$email_transactional_message_data->content($content);
 
-eval {
-    $api_instance->campaigns_by_name_delete(name => $name);
-};
-if ($@) {
-    warn "Exception when calling CampaignsApi->campaigns_by_name_delete: $@\n";
-}
-
+my $result = $api_instance->emails_transactional_post(email_transactional_message_data => $email_transactional_message_data);
 ```
 
 
