@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use ElasticEmail::Object::EmailPredictedValidationStatus;
 use ElasticEmail::Object::EmailValidationStatus;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
@@ -283,6 +284,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'predicted_score' => {
+        datatype => 'double',
+        base_name => 'PredictedScore',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'predicted_status' => {
+        datatype => 'EmailPredictedValidationStatus',
+        base_name => 'PredictedStatus',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -294,7 +309,9 @@ __PACKAGE__->openapi_types( {
     'role' => 'boolean',
     'reason' => 'string',
     'date_added' => 'DATE_TIME',
-    'result' => 'EmailValidationStatus'
+    'result' => 'EmailValidationStatus',
+    'predicted_score' => 'double',
+    'predicted_status' => 'EmailPredictedValidationStatus'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -306,7 +323,9 @@ __PACKAGE__->attribute_map( {
     'role' => 'Role',
     'reason' => 'Reason',
     'date_added' => 'DateAdded',
-    'result' => 'Result'
+    'result' => 'Result',
+    'predicted_score' => 'PredictedScore',
+    'predicted_status' => 'PredictedStatus'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

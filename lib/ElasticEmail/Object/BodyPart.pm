@@ -237,7 +237,7 @@ __PACKAGE__->method_documentation({
     'charset' => {
         datatype => 'string',
         base_name => 'Charset',
-        description => 'Text value of charset encoding for example: iso-8859-1, windows-1251, utf-8, us-ascii, windows-1250 and more…',
+        description => 'Text value of charset encoding for example: iso-8859-1, windows-1251, utf-8, us-ascii, windows-1250 and more...',
         format => '',
         read_only => '',
             },
