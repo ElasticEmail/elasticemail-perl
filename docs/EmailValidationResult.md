@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 **disposable** | **boolean** | Does the email have a temporary domain | [optional] 
 **role** | **boolean** | Is an email a role email (e.g. info@, noreply@ etc.) | [optional] 
 **reason** | **string** | All detected issues | [optional] 
-**date_added** | **DATE_TIME** | Date of creation in YYYY-MM-DDThh:ii:ss format | [optional] 
+**date_added** | **DATE_TIME** | Added date | [optional] 
 **result** | [**EmailValidationStatus**](EmailValidationStatus.md) |  | [optional] 
-**predicted_score** | **double** |  | [optional] 
+**predicted_score** | **double** | Predicted score | [optional] 
 **predicted_status** | [**EmailPredictedValidationStatus**](EmailPredictedValidationStatus.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

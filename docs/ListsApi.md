@@ -9,6 +9,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**lists_by_listname_contacts_get**](ListsApi.md#lists_by_listname_contacts_get) | **GET** /lists/{listname}/contacts | Load Contacts in List
 [**lists_by_name_contacts_post**](ListsApi.md#lists_by_name_contacts_post) | **POST** /lists/{name}/contacts | Add Contacts to List
 [**lists_by_name_contacts_remove_post**](ListsApi.md#lists_by_name_contacts_remove_post) | **POST** /lists/{name}/contacts/remove | Remove Contacts from List
 [**lists_by_name_delete**](ListsApi.md#lists_by_name_delete) | **DELETE** /lists/{name} | Delete List
@@ -17,6 +18,61 @@ Method | HTTP request | Description
 [**lists_get**](ListsApi.md#lists_get) | **GET** /lists | Load Lists
 [**lists_post**](ListsApi.md#lists_post) | **POST** /lists | Add List
 
+
+# **lists_by_listname_contacts_get**
+> ARRAY[Contact] lists_by_listname_contacts_get(listname => $listname, limit => $limit, offset => $offset)
+
+Load Contacts in List
+
+Returns a list of contacts. Required Access Level: ViewContacts
+
+### Example
+```perl
+use Data::Dumper;
+use ElasticEmail::ListsApi;
+my $api_instance = ElasticEmail::ListsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $listname = My List 1; # string | Name of your list.
+my $limit = 100; # int | Maximum number of returned items.
+my $offset = 20; # int | How many items should be returned ahead.
+
+eval {
+    my $result = $api_instance->lists_by_listname_contacts_get(listname => $listname, limit => $limit, offset => $offset);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ListsApi->lists_by_listname_contacts_get: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listname** | **string**| Name of your list. | 
+ **limit** | **int**| Maximum number of returned items. | [optional] 
+ **offset** | **int**| How many items should be returned ahead. | [optional] 
+
+### Return type
+
+[**ARRAY[Contact]**](Contact.md)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **lists_by_name_contacts_post**
 > ContactsList lists_by_name_contacts_post(name => $name, emails_payload => $emails_payload)

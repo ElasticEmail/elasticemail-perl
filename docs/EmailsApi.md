@@ -10,6 +10,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**emails_by_msgid_view_get**](EmailsApi.md#emails_by_msgid_view_get) | **GET** /emails/{msgid}/view | View Email
+[**emails_by_transactionid_status_get**](EmailsApi.md#emails_by_transactionid_status_get) | **GET** /emails/{transactionid}/status | Get Status
 [**emails_mergefile_post**](EmailsApi.md#emails_mergefile_post) | **POST** /emails/mergefile | Send Bulk Emails CSV
 [**emails_post**](EmailsApi.md#emails_post) | **POST** /emails | Send Bulk Emails
 [**emails_transactional_post**](EmailsApi.md#emails_transactional_post) | **POST** /emails/transactional | Send Transactional Email
@@ -54,6 +55,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EmailData**](EmailData.md)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **emails_by_transactionid_status_get**
+> EmailJobStatus emails_by_transactionid_status_get(transactionid => $transactionid, show_failed => $show_failed, show_sent => $show_sent, show_delivered => $show_delivered, show_pending => $show_pending, show_opened => $show_opened, show_clicked => $show_clicked, show_abuse => $show_abuse, show_unsubscribed => $show_unsubscribed, show_errors => $show_errors, show_message_ids => $show_message_ids)
+
+Get Status
+
+Get status details of an email transaction. Required Access Level: ViewReports
+
+### Example
+```perl
+use Data::Dumper;
+use ElasticEmail::EmailsApi;
+my $api_instance = ElasticEmail::EmailsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $transactionid = "transactionid_example"; # string | Transaction identifier
+my $show_failed = false; # boolean | Include Bounced email addresses.
+my $show_sent = false; # boolean | Include Sent email addresses.
+my $show_delivered = false; # boolean | Include all delivered email addresses.
+my $show_pending = false; # boolean | Include Ready to send email addresses.
+my $show_opened = false; # boolean | Include Opened email addresses.
+my $show_clicked = false; # boolean | Include Clicked email addresses.
+my $show_abuse = false; # boolean | Include Reported as abuse email addresses.
+my $show_unsubscribed = false; # boolean | Include Unsubscribed email addresses.
+my $show_errors = false; # boolean | Include error messages for bounced emails.
+my $show_message_ids = false; # boolean | Include all MessageIDs for this transaction
+
+eval {
+    my $result = $api_instance->emails_by_transactionid_status_get(transactionid => $transactionid, show_failed => $show_failed, show_sent => $show_sent, show_delivered => $show_delivered, show_pending => $show_pending, show_opened => $show_opened, show_clicked => $show_clicked, show_abuse => $show_abuse, show_unsubscribed => $show_unsubscribed, show_errors => $show_errors, show_message_ids => $show_message_ids);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling EmailsApi->emails_by_transactionid_status_get: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transactionid** | **string**| Transaction identifier | 
+ **show_failed** | **boolean**| Include Bounced email addresses. | [optional] [default to false]
+ **show_sent** | **boolean**| Include Sent email addresses. | [optional] [default to false]
+ **show_delivered** | **boolean**| Include all delivered email addresses. | [optional] [default to false]
+ **show_pending** | **boolean**| Include Ready to send email addresses. | [optional] [default to false]
+ **show_opened** | **boolean**| Include Opened email addresses. | [optional] [default to false]
+ **show_clicked** | **boolean**| Include Clicked email addresses. | [optional] [default to false]
+ **show_abuse** | **boolean**| Include Reported as abuse email addresses. | [optional] [default to false]
+ **show_unsubscribed** | **boolean**| Include Unsubscribed email addresses. | [optional] [default to false]
+ **show_errors** | **boolean**| Include error messages for bounced emails. | [optional] [default to false]
+ **show_message_ids** | **boolean**| Include all MessageIDs for this transaction | [optional] [default to false]
+
+### Return type
+
+[**EmailJobStatus**](EmailJobStatus.md)
 
 ### Authorization
 

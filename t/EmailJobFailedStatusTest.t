@@ -25,12 +25,12 @@ use strict;
 use warnings;
 
 
-use_ok('ElasticEmail::Object::ContactSource');
+use_ok('ElasticEmail::Object::EmailJobFailedStatus');
 
 # uncomment below and update the test
-#my $instance = ElasticEmail::Object::ContactSource->new();
+#my $instance = ElasticEmail::Object::EmailJobFailedStatus->new();
 #
-#isa_ok($instance, 'ElasticEmail::Object::ContactSource');
+#isa_ok($instance, 'ElasticEmail::Object::EmailJobFailedStatus');
 
 
 done_testing();

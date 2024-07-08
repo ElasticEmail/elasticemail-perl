@@ -49,6 +49,95 @@ sub new {
 
 
 #
+# lists_by_listname_contacts_get
+#
+# Load Contacts in List
+#
+# @param string $listname Name of your list. (required)
+# @param int $limit Maximum number of returned items. (optional)
+# @param int $offset How many items should be returned ahead. (optional)
+{
+    my $params = {
+    'listname' => {
+        data_type => 'string',
+        description => 'Name of your list.',
+        required => '1',
+    },
+    'limit' => {
+        data_type => 'int',
+        description => 'Maximum number of returned items.',
+        required => '0',
+    },
+    'offset' => {
+        data_type => 'int',
+        description => 'How many items should be returned ahead.',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'lists_by_listname_contacts_get' } = {
+        summary => 'Load Contacts in List',
+        params => $params,
+        returns => 'ARRAY[Contact]',
+        };
+}
+# @return ARRAY[Contact]
+#
+sub lists_by_listname_contacts_get {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'listname' is set
+    unless (exists $args{'listname'}) {
+      croak("Missing the required parameter 'listname' when calling lists_by_listname_contacts_get");
+    }
+
+    # parse inputs
+    my $_resource_path = '/lists/{listname}/contacts';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'limit'}) {
+        $query_params->{'limit'} = $self->{api_client}->to_query_value($args{'limit'});
+    }
+
+    # query params
+    if ( exists $args{'offset'}) {
+        $query_params->{'offset'} = $self->{api_client}->to_query_value($args{'offset'});
+    }
+
+    # path params
+    if ( exists $args{'listname'}) {
+        my $_base_variable = "{" . "listname" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'listname'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('ARRAY[Contact]', $response);
+    return $_response_object;
+}
+
+#
 # lists_by_name_contacts_post
 #
 # Add Contacts to List

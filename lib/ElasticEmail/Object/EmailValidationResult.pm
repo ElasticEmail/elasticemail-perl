@@ -273,7 +273,7 @@ __PACKAGE__->method_documentation({
     'date_added' => {
         datatype => 'DATE_TIME',
         base_name => 'DateAdded',
-        description => 'Date of creation in YYYY-MM-DDThh:ii:ss format',
+        description => 'Added date',
         format => '',
         read_only => '',
             },
@@ -287,7 +287,7 @@ __PACKAGE__->method_documentation({
     'predicted_score' => {
         datatype => 'double',
         base_name => 'PredictedScore',
-        description => '',
+        description => 'Predicted score',
         format => '',
         read_only => '',
             },

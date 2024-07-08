@@ -116,6 +116,183 @@ sub emails_by_msgid_view_get {
 }
 
 #
+# emails_by_transactionid_status_get
+#
+# Get Status
+#
+# @param string $transactionid Transaction identifier (required)
+# @param boolean $show_failed Include Bounced email addresses. (optional, default to false)
+# @param boolean $show_sent Include Sent email addresses. (optional, default to false)
+# @param boolean $show_delivered Include all delivered email addresses. (optional, default to false)
+# @param boolean $show_pending Include Ready to send email addresses. (optional, default to false)
+# @param boolean $show_opened Include Opened email addresses. (optional, default to false)
+# @param boolean $show_clicked Include Clicked email addresses. (optional, default to false)
+# @param boolean $show_abuse Include Reported as abuse email addresses. (optional, default to false)
+# @param boolean $show_unsubscribed Include Unsubscribed email addresses. (optional, default to false)
+# @param boolean $show_errors Include error messages for bounced emails. (optional, default to false)
+# @param boolean $show_message_ids Include all MessageIDs for this transaction (optional, default to false)
+{
+    my $params = {
+    'transactionid' => {
+        data_type => 'string',
+        description => 'Transaction identifier',
+        required => '1',
+    },
+    'show_failed' => {
+        data_type => 'boolean',
+        description => 'Include Bounced email addresses.',
+        required => '0',
+    },
+    'show_sent' => {
+        data_type => 'boolean',
+        description => 'Include Sent email addresses.',
+        required => '0',
+    },
+    'show_delivered' => {
+        data_type => 'boolean',
+        description => 'Include all delivered email addresses.',
+        required => '0',
+    },
+    'show_pending' => {
+        data_type => 'boolean',
+        description => 'Include Ready to send email addresses.',
+        required => '0',
+    },
+    'show_opened' => {
+        data_type => 'boolean',
+        description => 'Include Opened email addresses.',
+        required => '0',
+    },
+    'show_clicked' => {
+        data_type => 'boolean',
+        description => 'Include Clicked email addresses.',
+        required => '0',
+    },
+    'show_abuse' => {
+        data_type => 'boolean',
+        description => 'Include Reported as abuse email addresses.',
+        required => '0',
+    },
+    'show_unsubscribed' => {
+        data_type => 'boolean',
+        description => 'Include Unsubscribed email addresses.',
+        required => '0',
+    },
+    'show_errors' => {
+        data_type => 'boolean',
+        description => 'Include error messages for bounced emails.',
+        required => '0',
+    },
+    'show_message_ids' => {
+        data_type => 'boolean',
+        description => 'Include all MessageIDs for this transaction',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'emails_by_transactionid_status_get' } = {
+        summary => 'Get Status',
+        params => $params,
+        returns => 'EmailJobStatus',
+        };
+}
+# @return EmailJobStatus
+#
+sub emails_by_transactionid_status_get {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'transactionid' is set
+    unless (exists $args{'transactionid'}) {
+      croak("Missing the required parameter 'transactionid' when calling emails_by_transactionid_status_get");
+    }
+
+    # parse inputs
+    my $_resource_path = '/emails/{transactionid}/status';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'show_failed'}) {
+        $query_params->{'showFailed'} = $self->{api_client}->to_query_value($args{'show_failed'});
+    }
+
+    # query params
+    if ( exists $args{'show_sent'}) {
+        $query_params->{'showSent'} = $self->{api_client}->to_query_value($args{'show_sent'});
+    }
+
+    # query params
+    if ( exists $args{'show_delivered'}) {
+        $query_params->{'showDelivered'} = $self->{api_client}->to_query_value($args{'show_delivered'});
+    }
+
+    # query params
+    if ( exists $args{'show_pending'}) {
+        $query_params->{'showPending'} = $self->{api_client}->to_query_value($args{'show_pending'});
+    }
+
+    # query params
+    if ( exists $args{'show_opened'}) {
+        $query_params->{'showOpened'} = $self->{api_client}->to_query_value($args{'show_opened'});
+    }
+
+    # query params
+    if ( exists $args{'show_clicked'}) {
+        $query_params->{'showClicked'} = $self->{api_client}->to_query_value($args{'show_clicked'});
+    }
+
+    # query params
+    if ( exists $args{'show_abuse'}) {
+        $query_params->{'showAbuse'} = $self->{api_client}->to_query_value($args{'show_abuse'});
+    }
+
+    # query params
+    if ( exists $args{'show_unsubscribed'}) {
+        $query_params->{'showUnsubscribed'} = $self->{api_client}->to_query_value($args{'show_unsubscribed'});
+    }
+
+    # query params
+    if ( exists $args{'show_errors'}) {
+        $query_params->{'showErrors'} = $self->{api_client}->to_query_value($args{'show_errors'});
+    }
+
+    # query params
+    if ( exists $args{'show_message_ids'}) {
+        $query_params->{'showMessageIDs'} = $self->{api_client}->to_query_value($args{'show_message_ids'});
+    }
+
+    # path params
+    if ( exists $args{'transactionid'}) {
+        my $_base_variable = "{" . "transactionid" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'transactionid'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('EmailJobStatus', $response);
+    return $_response_object;
+}
+
+#
 # emails_mergefile_post
 #
 # Send Bulk Emails CSV
