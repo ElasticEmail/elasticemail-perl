@@ -44,6 +44,13 @@ isa_ok($api, 'ElasticEmail::CampaignsApi');
 #my $campaigns_by_name_get_result = $api->campaigns_by_name_get(name => $campaigns_by_name_get_name);
 
 #
+# campaigns_by_name_pause_put test
+#
+# uncomment below and update the test
+#my $campaigns_by_name_pause_put_name = undef; # replace NULL with a proper value
+#my $campaigns_by_name_pause_put_result = $api->campaigns_by_name_pause_put(name => $campaigns_by_name_pause_put_name);
+
+#
 # campaigns_by_name_put test
 #
 # uncomment below and update the test

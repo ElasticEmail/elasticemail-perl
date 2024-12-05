@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**campaigns_by_name_delete**](CampaignsApi.md#campaigns_by_name_delete) | **DELETE** /campaigns/{name} | Delete Campaign
 [**campaigns_by_name_get**](CampaignsApi.md#campaigns_by_name_get) | **GET** /campaigns/{name} | Load Campaign
+[**campaigns_by_name_pause_put**](CampaignsApi.md#campaigns_by_name_pause_put) | **PUT** /campaigns/{name}/pause | Pause Campaign
 [**campaigns_by_name_put**](CampaignsApi.md#campaigns_by_name_put) | **PUT** /campaigns/{name} | Update Campaign
 [**campaigns_get**](CampaignsApi.md#campaigns_get) | **GET** /campaigns | Load Campaigns
 [**campaigns_post**](CampaignsApi.md#campaigns_post) | **POST** /campaigns | Add Campaign
@@ -114,6 +115,56 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **campaigns_by_name_pause_put**
+> campaigns_by_name_pause_put(name => $name)
+
+Pause Campaign
+
+Pauses the specific campaign, cancelling emails that are waiting to be sent. Required Access Level: ModifyCampaigns
+
+### Example
+```perl
+use Data::Dumper;
+use ElasticEmail::CampaignsApi;
+my $api_instance = ElasticEmail::CampaignsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $name = "name_example"; # string | Name of Campaign to pause
+
+eval {
+    $api_instance->campaigns_by_name_pause_put(name => $name);
+};
+if ($@) {
+    warn "Exception when calling CampaignsApi->campaigns_by_name_pause_put: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**| Name of Campaign to pause | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

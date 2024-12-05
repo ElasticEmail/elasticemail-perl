@@ -26,7 +26,7 @@ use utf8;
 use Log::Any qw($log);
 use Carp;
 
-use constant VERSION => '4.0.23';
+use constant VERSION => '4.0.25';
 
 =head1 Name
 
@@ -46,7 +46,7 @@ default: 180
 
 String. custom UserAgent header
 
-default: OpenAPI-Generator/4.0.23/perl
+default: OpenAPI-Generator/4.0.25/perl
 
 =item api_key: (optional)
 

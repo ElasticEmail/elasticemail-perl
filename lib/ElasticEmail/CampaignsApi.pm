@@ -179,6 +179,69 @@ sub campaigns_by_name_get {
 }
 
 #
+# campaigns_by_name_pause_put
+#
+# Pause Campaign
+#
+# @param string $name Name of Campaign to pause (required)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => 'Name of Campaign to pause',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'campaigns_by_name_pause_put' } = {
+        summary => 'Pause Campaign',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub campaigns_by_name_pause_put {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling campaigns_by_name_pause_put");
+    }
+
+    # parse inputs
+    my $_resource_path = '/campaigns/{name}/pause';
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept();
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
+#
 # campaigns_by_name_put
 #
 # Update Campaign
