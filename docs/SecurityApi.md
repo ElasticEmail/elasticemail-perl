@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 Delete ApiKey
 
-Delete your existing ApiKey. Required Access Level: Security
+Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 Update ApiKey
 
-Update your existing ApiKey. Required Access Level: Security
+Update your existing ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 Add ApiKey
 
-Add a new ApiKey. Required Access Level: Security
+Add a new ApiKey. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 Delete SMTP Credential
 
-Delete your existing SMTP Credentials. Required Access Level: Security
+Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl
@@ -391,7 +391,7 @@ Name | Type | Description  | Notes
 
 Update SMTP Credential
 
-Update your existing SMTP Credentials. Required Access Level: Security
+Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
 
 Add SMTP Credential
 
-Add new SMTP Credential. Required Access Level: Security
+Add new SMTP Credential. Required Access Level: ModifyAccessTokens
 
 ### Example
 ```perl

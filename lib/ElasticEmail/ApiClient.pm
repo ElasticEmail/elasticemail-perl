@@ -347,6 +347,12 @@ sub update_params_for_auth {
                 $header_params->{'X-ElasticEmail-ApiKey'} = $api_key;
             }
         }
+        elsif ($auth eq 'ApiKeyAuthCustomBranding') {
+            my $api_key = $self->get_api_key_with_prefix('X-Auth-Token');
+            if ($api_key) {
+                $header_params->{'X-Auth-Token'} = $api_key;
+            }
+        }
         else {
            # TODO show warning about security definition not found
         }
