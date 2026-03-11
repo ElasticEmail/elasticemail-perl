@@ -2,7 +2,7 @@
 
 Elastic Email REST API
 
-This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
 
 The version of the OpenAPI document: 4.0.0
 Contact: support@elasticemail.com
@@ -48,7 +48,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 Elastic Email REST API
 
-This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target='_blank' href='https://app.elasticemail.com/marketing/settings/new/manage-api'>here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target='_blank' href='https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme'>here</a>
 
 The version of the OpenAPI document: 4.0.0
 Contact: support@elasticemail.com
@@ -251,6 +251,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'excluded_recipients' => {
+        datatype => 'CampaignRecipient',
+        base_name => 'ExcludedRecipients',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'options' => {
         datatype => 'CampaignOptions',
         base_name => 'Options',
@@ -265,6 +272,7 @@ __PACKAGE__->openapi_types( {
     'name' => 'string',
     'status' => 'CampaignStatus',
     'recipients' => 'CampaignRecipient',
+    'excluded_recipients' => 'CampaignRecipient',
     'options' => 'CampaignOptions'
 } );
 
@@ -273,6 +281,7 @@ __PACKAGE__->attribute_map( {
     'name' => 'Name',
     'status' => 'Status',
     'recipients' => 'Recipients',
+    'excluded_recipients' => 'ExcludedRecipients',
     'options' => 'Options'
 } );
 

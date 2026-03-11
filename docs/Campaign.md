@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **name** | **string** | Campaign name | 
 **status** | [**CampaignStatus**](CampaignStatus.md) |  | [optional] 
 **recipients** | [**CampaignRecipient**](CampaignRecipient.md) |  | 
+**excluded_recipients** | [**CampaignRecipient**](CampaignRecipient.md) |  | [optional] 
 **options** | [**CampaignOptions**](CampaignOptions.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

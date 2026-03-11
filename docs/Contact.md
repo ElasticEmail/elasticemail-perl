@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **custom_fields** | **HASH[string,string]** | A key-value collection of custom contact fields which can be used in the system. | [optional] 
 **consent** | [**ConsentData**](ConsentData.md) |  | [optional] 
 **source** | [**ContactSource**](ContactSource.md) |  | [optional] 
+**source_info** | **string** |  | [optional] 
 **date_added** | **DATE_TIME** | Date of creation in YYYY-MM-DDThh:ii:ss format | [optional] 
 **date_updated** | **DATE_TIME** | Last change date | [optional] 
 **status_change_date** | **DATE_TIME** | Date of last status change. | [optional] 
