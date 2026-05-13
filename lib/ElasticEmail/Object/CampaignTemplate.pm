@@ -237,7 +237,7 @@ __PACKAGE__->method_documentation({
     'reply_to' => {
         datatype => 'string',
         base_name => 'ReplyTo',
-        description => 'To what address should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)',
+        description => 'To what addresses should the recipients reply to (e.g. John Doe &lt;email@domain.com&gt;)',
         format => '',
         read_only => '',
             },

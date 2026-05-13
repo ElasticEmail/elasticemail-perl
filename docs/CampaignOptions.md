@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **trigger_frequency** | **double** | How often (in minutes) to send the campaign | [optional] 
 **trigger_count** | **int** | How many times send the campaign | [optional] 
 **split_options** | [**SplitOptions**](SplitOptions.md) |  | [optional] 
+**send_at_local_time** | **boolean** | Send email at local time of contact. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

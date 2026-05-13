@@ -270,6 +270,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'send_at_local_time' => {
+        datatype => 'boolean',
+        base_name => 'SendAtLocalTime',
+        description => 'Send email at local time of contact.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -279,7 +286,8 @@ __PACKAGE__->openapi_types( {
     'schedule_for' => 'DATE_TIME',
     'trigger_frequency' => 'double',
     'trigger_count' => 'int',
-    'split_options' => 'SplitOptions'
+    'split_options' => 'SplitOptions',
+    'send_at_local_time' => 'boolean'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -289,7 +297,8 @@ __PACKAGE__->attribute_map( {
     'schedule_for' => 'ScheduleFor',
     'trigger_frequency' => 'TriggerFrequency',
     'trigger_count' => 'TriggerCount',
-    'split_options' => 'SplitOptions'
+    'split_options' => 'SplitOptions',
+    'send_at_local_time' => 'SendAtLocalTime'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
