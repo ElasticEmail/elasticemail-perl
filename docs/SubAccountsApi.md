@@ -9,6 +9,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**subaccounts_by_email_apikey_get**](SubAccountsApi.md#subaccounts_by_email_apikey_get) | **GET** /subaccounts/{email}/apikey | Get SubAccount ApiKey
 [**subaccounts_by_email_credits_patch**](SubAccountsApi.md#subaccounts_by_email_credits_patch) | **PATCH** /subaccounts/{email}/credits | Add, Subtract Email Credits
 [**subaccounts_by_email_delete**](SubAccountsApi.md#subaccounts_by_email_delete) | **DELETE** /subaccounts/{email} | Delete SubAccount
 [**subaccounts_by_email_get**](SubAccountsApi.md#subaccounts_by_email_get) | **GET** /subaccounts/{email} | Load SubAccount
@@ -16,6 +17,57 @@ Method | HTTP request | Description
 [**subaccounts_get**](SubAccountsApi.md#subaccounts_get) | **GET** /subaccounts | Load SubAccounts
 [**subaccounts_post**](SubAccountsApi.md#subaccounts_post) | **POST** /subaccounts | Add SubAccount
 
+
+# **subaccounts_by_email_apikey_get**
+> string subaccounts_by_email_apikey_get(email => $email)
+
+Get SubAccount ApiKey
+
+Returns API key token for the specified SubAccount.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
+
+### Example
+```perl
+use Data::Dumper;
+use ElasticEmail::SubAccountsApi;
+my $api_instance = ElasticEmail::SubAccountsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $email = mail@example.com; # string | Email address of Sub-Account
+
+eval {
+    my $result = $api_instance->subaccounts_by_email_apikey_get(email => $email);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling SubAccountsApi->subaccounts_by_email_apikey_get: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **email** | **string**| Email address of Sub-Account | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subaccounts_by_email_credits_patch**
 > subaccounts_by_email_credits_patch(email => $email, subaccount_email_credits_payload => $subaccount_email_credits_payload)
@@ -281,7 +333,7 @@ Name | Type | Description  | Notes
 
 Add SubAccount
 
-Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the 'subaccount' parameter. Required Access Level: ModifySubAccounts
+Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the 'subaccount' parameter.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
 
 ### Example
 ```perl

@@ -93,7 +93,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
 );
 
 my $name = "name_example"; # string | Name of the ApiKey
-my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKey should be loaded
+my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
 
 eval {
     my $result = $api_instance->security_apikeys_by_name_get(name => $name, subaccount => $subaccount);
@@ -109,7 +109,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **string**| Name of the ApiKey | 
- **subaccount** | **string**| Email of the subaccount of which ApiKey should be loaded | [optional] 
+ **subaccount** | **string**| Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] 
 
 ### Return type
 
@@ -198,7 +198,7 @@ my $api_instance = ElasticEmail::SecurityApi->new(
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
 
-my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKeys should be loaded
+my $subaccount = "subaccount_example"; # string | Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
 
 eval {
     my $result = $api_instance->security_apikeys_get(subaccount => $subaccount);
@@ -213,7 +213,7 @@ if ($@) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subaccount** | **string**| Email of the subaccount of which ApiKeys should be loaded | [optional] 
+ **subaccount** | **string**| Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] 
 
 ### Return type
 

@@ -9,6 +9,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**campaigns_automation_by_name_trigger_post**](CampaignsApi.md#campaigns_automation_by_name_trigger_post) | **POST** /campaigns/automation/{name}/trigger | Trigger Automation for Contact
 [**campaigns_by_name_delete**](CampaignsApi.md#campaigns_by_name_delete) | **DELETE** /campaigns/{name} | Delete Campaign
 [**campaigns_by_name_get**](CampaignsApi.md#campaigns_by_name_get) | **GET** /campaigns/{name} | Load Campaign
 [**campaigns_by_name_pause_put**](CampaignsApi.md#campaigns_by_name_pause_put) | **PUT** /campaigns/{name}/pause | Pause Campaign
@@ -16,6 +17,58 @@ Method | HTTP request | Description
 [**campaigns_get**](CampaignsApi.md#campaigns_get) | **GET** /campaigns | Load Campaigns
 [**campaigns_post**](CampaignsApi.md#campaigns_post) | **POST** /campaigns | Add Campaign
 
+
+# **campaigns_automation_by_name_trigger_post**
+> campaigns_automation_by_name_trigger_post(name => $name, contact_email => $contact_email)
+
+Trigger Automation for Contact
+
+Manually trigger an Automation for a contact. Required Access Level: ModifyAutomations
+
+### Example
+```perl
+use Data::Dumper;
+use ElasticEmail::CampaignsApi;
+my $api_instance = ElasticEmail::CampaignsApi->new(
+
+    # Configure API key authorization: apikey
+    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+    #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
+);
+
+my $name = "name_example"; # string | 
+my $contact_email = "contact_email_example"; # string | 
+
+eval {
+    $api_instance->campaigns_automation_by_name_trigger_post(name => $name, contact_email => $contact_email);
+};
+if ($@) {
+    warn "Exception when calling CampaignsApi->campaigns_automation_by_name_trigger_post: $@\n";
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string**|  | 
+ **contact_email** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **campaigns_by_name_delete**
 > campaigns_by_name_delete(name => $name)

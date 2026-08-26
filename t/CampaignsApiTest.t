@@ -30,6 +30,14 @@ my $api = ElasticEmail::CampaignsApi->new();
 isa_ok($api, 'ElasticEmail::CampaignsApi');
 
 #
+# campaigns_automation_by_name_trigger_post test
+#
+# uncomment below and update the test
+#my $campaigns_automation_by_name_trigger_post_name = undef; # replace NULL with a proper value
+#my $campaigns_automation_by_name_trigger_post_contact_email = undef; # replace NULL with a proper value
+#my $campaigns_automation_by_name_trigger_post_result = $api->campaigns_automation_by_name_trigger_post(name => $campaigns_automation_by_name_trigger_post_name, contact_email => $campaigns_automation_by_name_trigger_post_contact_email);
+
+#
 # campaigns_by_name_delete test
 #
 # uncomment below and update the test

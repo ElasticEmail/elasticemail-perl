@@ -49,6 +49,85 @@ sub new {
 
 
 #
+# campaigns_automation_by_name_trigger_post
+#
+# Trigger Automation for Contact
+#
+# @param string $name  (required)
+# @param string $contact_email  (required)
+{
+    my $params = {
+    'name' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    'contact_email' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'campaigns_automation_by_name_trigger_post' } = {
+        summary => 'Trigger Automation for Contact',
+        params => $params,
+        returns => undef,
+        };
+}
+# @return void
+#
+sub campaigns_automation_by_name_trigger_post {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'name' is set
+    unless (exists $args{'name'}) {
+      croak("Missing the required parameter 'name' when calling campaigns_automation_by_name_trigger_post");
+    }
+
+    # verify the required parameter 'contact_email' is set
+    unless (exists $args{'contact_email'}) {
+      croak("Missing the required parameter 'contact_email' when calling campaigns_automation_by_name_trigger_post");
+    }
+
+    # parse inputs
+    my $_resource_path = '/campaigns/automation/{name}/trigger';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept();
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # query params
+    if ( exists $args{'contact_email'}) {
+        $query_params->{'contactEmail'} = $self->{api_client}->to_query_value($args{'contact_email'});
+    }
+
+    # path params
+    if ( exists $args{'name'}) {
+        my $_base_variable = "{" . "name" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'name'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    return;
+}
+
+#
 # campaigns_by_name_delete
 #
 # Delete Campaign

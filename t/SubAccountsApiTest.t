@@ -30,6 +30,13 @@ my $api = ElasticEmail::SubAccountsApi->new();
 isa_ok($api, 'ElasticEmail::SubAccountsApi');
 
 #
+# subaccounts_by_email_apikey_get test
+#
+# uncomment below and update the test
+#my $subaccounts_by_email_apikey_get_email = undef; # replace NULL with a proper value
+#my $subaccounts_by_email_apikey_get_result = $api->subaccounts_by_email_apikey_get(email => $subaccounts_by_email_apikey_get_email);
+
+#
 # subaccounts_by_email_credits_patch test
 #
 # uncomment below and update the test

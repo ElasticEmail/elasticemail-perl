@@ -49,6 +49,73 @@ sub new {
 
 
 #
+# subaccounts_by_email_apikey_get
+#
+# Get SubAccount ApiKey
+#
+# @param string $email Email address of Sub-Account (required)
+{
+    my $params = {
+    'email' => {
+        data_type => 'string',
+        description => 'Email address of Sub-Account',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'subaccounts_by_email_apikey_get' } = {
+        summary => 'Get SubAccount ApiKey',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub subaccounts_by_email_apikey_get {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'email' is set
+    unless (exists $args{'email'}) {
+      croak("Missing the required parameter 'email' when calling subaccounts_by_email_apikey_get");
+    }
+
+    # parse inputs
+    my $_resource_path = '/subaccounts/{email}/apikey';
+
+    my $_method = 'GET';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'email'}) {
+        my $_base_variable = "{" . "email" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'email'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
 # subaccounts_by_email_credits_patch
 #
 # Add, Subtract Email Credits

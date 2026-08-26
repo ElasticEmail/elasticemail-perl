@@ -19,13 +19,16 @@ Name | Type | Description | Notes
 **type** | [**TrackingType**](TrackingType.md) |  | [optional] 
 **tracking_status** | [**TrackingValidationStatus**](TrackingValidationStatus.md) |  | [optional] 
 **certificate_status** | [**CertificateValidationStatus**](CertificateValidationStatus.md) |  | [optional] 
+**certificate_expiry_date** | **DATE_TIME** |  | [optional] 
 **certificate_validation_error** | **string** |  | [optional] 
 **tracking_type_user_request** | [**TrackingType**](TrackingType.md) |  | [optional] 
 **verp** | **boolean** |  | [optional] 
 **custom_bounces_domain** | **string** |  | [optional] 
 **is_custom_bounces_domain_default** | **boolean** |  | [optional] 
+**was_ever_verified** | **boolean** |  | [optional] 
 **is_marked_for_deletion** | **boolean** |  | [optional] 
 **ownership** | [**DomainOwner**](DomainOwner.md) |  | [optional] 
+**dkim_record** | [**DKIMRecord**](DKIMRecord.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -31,6 +31,7 @@ use Date::Parse;
 use DateTime;
 
 use ElasticEmail::Object::CertificateValidationStatus;
+use ElasticEmail::Object::DKIMRecord;
 use ElasticEmail::Object::DomainOwner;
 use ElasticEmail::Object::TrackingType;
 use ElasticEmail::Object::TrackingValidationStatus;
@@ -300,6 +301,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'certificate_expiry_date' => {
+        datatype => 'DATE_TIME',
+        base_name => 'CertificateExpiryDate',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'certificate_validation_error' => {
         datatype => 'string',
         base_name => 'CertificateValidationError',
@@ -335,6 +343,13 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'was_ever_verified' => {
+        datatype => 'boolean',
+        base_name => 'WasEverVerified',
+        description => '',
+        format => '',
+        read_only => '',
+            },
     'is_marked_for_deletion' => {
         datatype => 'boolean',
         base_name => 'IsMarkedForDeletion',
@@ -345,6 +360,13 @@ __PACKAGE__->method_documentation({
     'ownership' => {
         datatype => 'DomainOwner',
         base_name => 'Ownership',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'dkim_record' => {
+        datatype => 'DKIMRecord',
+        base_name => 'DKIMRecord',
         description => '',
         format => '',
         read_only => '',
@@ -363,13 +385,16 @@ __PACKAGE__->openapi_types( {
     'type' => 'TrackingType',
     'tracking_status' => 'TrackingValidationStatus',
     'certificate_status' => 'CertificateValidationStatus',
+    'certificate_expiry_date' => 'DATE_TIME',
     'certificate_validation_error' => 'string',
     'tracking_type_user_request' => 'TrackingType',
     'verp' => 'boolean',
     'custom_bounces_domain' => 'string',
     'is_custom_bounces_domain_default' => 'boolean',
+    'was_ever_verified' => 'boolean',
     'is_marked_for_deletion' => 'boolean',
-    'ownership' => 'DomainOwner'
+    'ownership' => 'DomainOwner',
+    'dkim_record' => 'DKIMRecord'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -384,13 +409,16 @@ __PACKAGE__->attribute_map( {
     'type' => 'Type',
     'tracking_status' => 'TrackingStatus',
     'certificate_status' => 'CertificateStatus',
+    'certificate_expiry_date' => 'CertificateExpiryDate',
     'certificate_validation_error' => 'CertificateValidationError',
     'tracking_type_user_request' => 'TrackingTypeUserRequest',
     'verp' => 'VERP',
     'custom_bounces_domain' => 'CustomBouncesDomain',
     'is_custom_bounces_domain_default' => 'IsCustomBouncesDomainDefault',
+    'was_ever_verified' => 'WasEverVerified',
     'is_marked_for_deletion' => 'IsMarkedForDeletion',
-    'ownership' => 'Ownership'
+    'ownership' => 'Ownership',
+    'dkim_record' => 'DKIMRecord'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

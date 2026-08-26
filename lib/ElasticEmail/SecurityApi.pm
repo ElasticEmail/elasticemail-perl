@@ -128,7 +128,7 @@ sub security_apikeys_by_name_delete {
 # Load ApiKey
 #
 # @param string $name Name of the ApiKey (required)
-# @param string $subaccount Email of the subaccount of which ApiKey should be loaded (optional)
+# @param string $subaccount Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
 {
     my $params = {
     'name' => {
@@ -138,7 +138,7 @@ sub security_apikeys_by_name_delete {
     },
     'subaccount' => {
         data_type => 'string',
-        description => 'Email of the subaccount of which ApiKey should be loaded',
+        description => 'Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period.',
         required => '0',
     },
     };
@@ -288,12 +288,12 @@ sub security_apikeys_by_name_put {
 #
 # List ApiKeys
 #
-# @param string $subaccount Email of the subaccount of which ApiKeys should be loaded (optional)
+# @param string $subaccount Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. (optional)
 {
     my $params = {
     'subaccount' => {
         data_type => 'string',
-        description => 'Email of the subaccount of which ApiKeys should be loaded',
+        description => 'Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period.',
         required => '0',
     },
     };
