@@ -1,16 +1,15 @@
 # Perl Snippets
 Snippets prepared for Perl.
 
-## Prepare test environment outside this repo
-Download our ElasticEmail-WebApiClient (https://github.com/ElasticEmail/ElasticEmail.WebApiClient.perl) and our library https://github.com/ElasticEmail/elasticemail-perl/tree/master/lib/ElasticEmail.
+## Prepare test environment
+Clone this repository and install the dependencies from the `cpanfile`:
 
-To install this module, run the following commands:
+```bash
+git clone https://github.com/ElasticEmail/elasticemail-perl.git
+cd elasticemail-perl
+cpanm --installdeps .
+```
 
-	perl Makefile.PL
-	make
-	make test
-	make install
-    
 ## Prepare a snippet
 Edit snippet and put your api key in place of `YOUR_API_KEY`
 
@@ -22,9 +21,6 @@ Replace other data if needed eg.:
 - ...etc
 
 ## Running a snippet
-Run
+From the repository root, run
 
-`cd perl_snippets`
-
-`perl functions/snippetFile.pl`
-
+`perl -Ilib examples/functions/snippetFile.pl`
