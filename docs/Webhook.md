@@ -21,6 +21,9 @@ Name | Type | Description | Notes
 **notification_for_abuse_report** | **boolean** |  | [optional] 
 **notification_for_error** | **boolean** |  | [optional] 
 **is_enabled** | **boolean** |  | [optional] 
+**signing_enabled** | **boolean** | Requests carry an HMAC-SHA256 signature. Chosen when the webhook is created and can&#39;t be changed. | [optional] 
+**delivery_method** | [**WebhookDeliveryMethod**](WebhookDeliveryMethod.md) |  | [optional] 
+**signing_secret** | **string** | Signing secret - returned only once, when a webhook is created with signing or its secret is rotated. Store it safely. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -52,6 +52,13 @@ isa_ok($api, 'ElasticEmail::WebhookApi');
 #my $webhook_by_publicid_put_result = $api->webhook_by_publicid_put(publicid => $webhook_by_publicid_put_publicid, webhook_update_payload => $webhook_by_publicid_put_webhook_update_payload);
 
 #
+# webhook_by_publicid_secret_rotate_post test
+#
+# uncomment below and update the test
+#my $webhook_by_publicid_secret_rotate_post_publicid = undef; # replace NULL with a proper value
+#my $webhook_by_publicid_secret_rotate_post_result = $api->webhook_by_publicid_secret_rotate_post(publicid => $webhook_by_publicid_secret_rotate_post_publicid);
+
+#
 # webhook_get test
 #
 # uncomment below and update the test

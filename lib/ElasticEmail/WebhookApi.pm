@@ -262,6 +262,73 @@ sub webhook_by_publicid_put {
 }
 
 #
+# webhook_by_publicid_secret_rotate_post
+#
+# Rotate Webhook Secret
+#
+# @param string $publicid  (required)
+{
+    my $params = {
+    'publicid' => {
+        data_type => 'string',
+        description => '',
+        required => '1',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'webhook_by_publicid_secret_rotate_post' } = {
+        summary => 'Rotate Webhook Secret',
+        params => $params,
+        returns => 'Webhook',
+        };
+}
+# @return Webhook
+#
+sub webhook_by_publicid_secret_rotate_post {
+    my ($self, %args) = @_;
+
+    # verify the required parameter 'publicid' is set
+    unless (exists $args{'publicid'}) {
+      croak("Missing the required parameter 'publicid' when calling webhook_by_publicid_secret_rotate_post");
+    }
+
+    # parse inputs
+    my $_resource_path = '/webhook/{publicid}/secret/rotate';
+
+    my $_method = 'POST';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type();
+
+    # path params
+    if ( exists $args{'publicid'}) {
+        my $_base_variable = "{" . "publicid" . "}";
+        my $_base_value = $self->{api_client}->to_path_value($args{'publicid'});
+        $_resource_path =~ s/$_base_variable/$_base_value/g;
+    }
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw(apikey )];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('Webhook', $response);
+    return $_response_object;
+}
+
+#
 # webhook_get
 #
 # Load Webhooks

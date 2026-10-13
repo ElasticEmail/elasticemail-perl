@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use ElasticEmail::Object::WebhookDeliveryMethod;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -282,6 +283,20 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'enable_signing' => {
+        datatype => 'boolean',
+        base_name => 'EnableSigning',
+        description => 'Sign every request with HMAC-SHA256. Can be set only when the webhook is created. Default: false.',
+        format => '',
+        read_only => '',
+            },
+    'delivery_method' => {
+        datatype => 'WebhookDeliveryMethod',
+        base_name => 'DeliveryMethod',
+        description => '',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -293,7 +308,9 @@ __PACKAGE__->openapi_types( {
     'notification_for_clicked' => 'boolean',
     'notification_for_unsubscribed' => 'boolean',
     'notification_for_abuse_report' => 'boolean',
-    'notification_for_error' => 'boolean'
+    'notification_for_error' => 'boolean',
+    'enable_signing' => 'boolean',
+    'delivery_method' => 'WebhookDeliveryMethod'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -305,7 +322,9 @@ __PACKAGE__->attribute_map( {
     'notification_for_clicked' => 'NotificationForClicked',
     'notification_for_unsubscribed' => 'NotificationForUnsubscribed',
     'notification_for_abuse_report' => 'NotificationForAbuseReport',
-    'notification_for_error' => 'NotificationForError'
+    'notification_for_error' => 'NotificationForError',
+    'enable_signing' => 'EnableSigning',
+    'delivery_method' => 'DeliveryMethod'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

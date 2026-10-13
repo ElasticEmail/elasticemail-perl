@@ -30,6 +30,7 @@ use Log::Any qw($log);
 use Date::Parse;
 use DateTime;
 
+use ElasticEmail::Object::WebhookDeliveryMethod;
 
 use base ("Class::Accessor", "Class::Data::Inheritable");
 
@@ -310,6 +311,27 @@ __PACKAGE__->method_documentation({
         format => '',
         read_only => '',
             },
+    'signing_enabled' => {
+        datatype => 'boolean',
+        base_name => 'SigningEnabled',
+        description => 'Requests carry an HMAC-SHA256 signature. Chosen when the webhook is created and can&#39;t be changed.',
+        format => '',
+        read_only => '',
+            },
+    'delivery_method' => {
+        datatype => 'WebhookDeliveryMethod',
+        base_name => 'DeliveryMethod',
+        description => '',
+        format => '',
+        read_only => '',
+            },
+    'signing_secret' => {
+        datatype => 'string',
+        base_name => 'SigningSecret',
+        description => 'Signing secret - returned only once, when a webhook is created with signing or its secret is rotated. Store it safely.',
+        format => '',
+        read_only => '',
+            },
 });
 
 __PACKAGE__->openapi_types( {
@@ -325,7 +347,10 @@ __PACKAGE__->openapi_types( {
     'notification_for_unsubscribed' => 'boolean',
     'notification_for_abuse_report' => 'boolean',
     'notification_for_error' => 'boolean',
-    'is_enabled' => 'boolean'
+    'is_enabled' => 'boolean',
+    'signing_enabled' => 'boolean',
+    'delivery_method' => 'WebhookDeliveryMethod',
+    'signing_secret' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
@@ -341,7 +366,10 @@ __PACKAGE__->attribute_map( {
     'notification_for_unsubscribed' => 'NotificationForUnsubscribed',
     'notification_for_abuse_report' => 'NotificationForAbuseReport',
     'notification_for_error' => 'NotificationForError',
-    'is_enabled' => 'IsEnabled'
+    'is_enabled' => 'IsEnabled',
+    'signing_enabled' => 'SigningEnabled',
+    'delivery_method' => 'DeliveryMethod',
+    'signing_secret' => 'SigningSecret'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

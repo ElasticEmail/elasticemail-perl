@@ -18,7 +18,7 @@ If you're not sure whether something is generated, open an issue first and ask.
 
 Search [existing issues](https://github.com/ElasticEmail/elasticemail-perl/issues) first. If nothing matches, open a new issue using the **Bug report** template and include:
 
-- SDK version (from the `VERSION` file or the release tag, e.g. `4.2.0`)
+- SDK version (from the `VERSION` file or the release tag, e.g. `4.3.0`)
 - Perl version (`perl -v`) and operating system
 - The API method you called and a minimal code sample
 - The full error message, including the HTTP status code (`API Exception(<code>): …`)
