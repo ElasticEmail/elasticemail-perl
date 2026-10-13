@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **emails_mergefile_post**
-> EmailSend emails_mergefile_post(merge_email_payload => $merge_email_payload)
+> EmailSend emails_mergefile_post(merge_email_payload => $merge_email_payload, idempotency_key => $idempotency_key)
 
 Send Bulk Emails CSV
 
@@ -158,9 +158,10 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 );
 
 my $merge_email_payload = ElasticEmail::Object::MergeEmailPayload->new(); # MergeEmailPayload | Email data
+my $idempotency_key = 6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b; # string | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
 
 eval {
-    my $result = $api_instance->emails_mergefile_post(merge_email_payload => $merge_email_payload);
+    my $result = $api_instance->emails_mergefile_post(merge_email_payload => $merge_email_payload, idempotency_key => $idempotency_key);
     print Dumper($result);
 };
 if ($@) {
@@ -173,6 +174,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **merge_email_payload** | [**MergeEmailPayload**](MergeEmailPayload.md)| Email data | 
+ **idempotency_key** | **string**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 
@@ -190,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **emails_post**
-> EmailSend emails_post(email_message_data => $email_message_data)
+> EmailSend emails_post(email_message_data => $email_message_data, idempotency_key => $idempotency_key)
 
 Send Bulk Emails
 
@@ -209,9 +211,10 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 );
 
 my $email_message_data = ElasticEmail::Object::EmailMessageData->new(); # EmailMessageData | Email data
+my $idempotency_key = 6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b; # string | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
 
 eval {
-    my $result = $api_instance->emails_post(email_message_data => $email_message_data);
+    my $result = $api_instance->emails_post(email_message_data => $email_message_data, idempotency_key => $idempotency_key);
     print Dumper($result);
 };
 if ($@) {
@@ -224,6 +227,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email_message_data** | [**EmailMessageData**](EmailMessageData.md)| Email data | 
+ **idempotency_key** | **string**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 
@@ -241,7 +245,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **emails_transactional_post**
-> EmailSend emails_transactional_post(email_transactional_message_data => $email_transactional_message_data)
+> EmailSend emails_transactional_post(email_transactional_message_data => $email_transactional_message_data, idempotency_key => $idempotency_key)
 
 Send Transactional Email
 
@@ -260,9 +264,10 @@ my $api_instance = ElasticEmail::EmailsApi->new(
 );
 
 my $email_transactional_message_data = ElasticEmail::Object::EmailTransactionalMessageData->new(); # EmailTransactionalMessageData | Email data
+my $idempotency_key = 6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b; # string | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
 
 eval {
-    my $result = $api_instance->emails_transactional_post(email_transactional_message_data => $email_transactional_message_data);
+    my $result = $api_instance->emails_transactional_post(email_transactional_message_data => $email_transactional_message_data, idempotency_key => $idempotency_key);
     print Dumper($result);
 };
 if ($@) {
@@ -275,6 +280,7 @@ if ($@) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **email_transactional_message_data** | [**EmailTransactionalMessageData**](EmailTransactionalMessageData.md)| Email data | 
+ **idempotency_key** | **string**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 

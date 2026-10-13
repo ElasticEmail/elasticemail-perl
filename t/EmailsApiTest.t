@@ -58,21 +58,24 @@ isa_ok($api, 'ElasticEmail::EmailsApi');
 #
 # uncomment below and update the test
 #my $emails_mergefile_post_merge_email_payload = undef; # replace NULL with a proper value
-#my $emails_mergefile_post_result = $api->emails_mergefile_post(merge_email_payload => $emails_mergefile_post_merge_email_payload);
+#my $emails_mergefile_post_idempotency_key = undef; # replace NULL with a proper value
+#my $emails_mergefile_post_result = $api->emails_mergefile_post(merge_email_payload => $emails_mergefile_post_merge_email_payload, idempotency_key => $emails_mergefile_post_idempotency_key);
 
 #
 # emails_post test
 #
 # uncomment below and update the test
 #my $emails_post_email_message_data = undef; # replace NULL with a proper value
-#my $emails_post_result = $api->emails_post(email_message_data => $emails_post_email_message_data);
+#my $emails_post_idempotency_key = undef; # replace NULL with a proper value
+#my $emails_post_result = $api->emails_post(email_message_data => $emails_post_email_message_data, idempotency_key => $emails_post_idempotency_key);
 
 #
 # emails_transactional_post test
 #
 # uncomment below and update the test
 #my $emails_transactional_post_email_transactional_message_data = undef; # replace NULL with a proper value
-#my $emails_transactional_post_result = $api->emails_transactional_post(email_transactional_message_data => $emails_transactional_post_email_transactional_message_data);
+#my $emails_transactional_post_idempotency_key = undef; # replace NULL with a proper value
+#my $emails_transactional_post_result = $api->emails_transactional_post(email_transactional_message_data => $emails_transactional_post_email_transactional_message_data, idempotency_key => $emails_transactional_post_idempotency_key);
 
 
 done_testing();

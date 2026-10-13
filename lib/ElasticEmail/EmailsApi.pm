@@ -298,12 +298,18 @@ sub emails_by_transactionid_status_get {
 # Send Bulk Emails CSV
 #
 # @param MergeEmailPayload $merge_email_payload Email data (required)
+# @param string $idempotency_key Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
 {
     my $params = {
     'merge_email_payload' => {
         data_type => 'MergeEmailPayload',
         description => 'Email data',
         required => '1',
+    },
+    'idempotency_key' => {
+        data_type => 'string',
+        description => 'Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'emails_mergefile_post' } = {
@@ -337,6 +343,11 @@ sub emails_mergefile_post {
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
+    # header params
+    if ( exists $args{'idempotency_key'}) {
+        $header_params->{'Idempotency-Key'} = $self->{api_client}->to_header_value($args{'idempotency_key'});
+    }
+
     my $_body_data;
     # body params
     if ( exists $args{'merge_email_payload'}) {
@@ -363,12 +374,18 @@ sub emails_mergefile_post {
 # Send Bulk Emails
 #
 # @param EmailMessageData $email_message_data Email data (required)
+# @param string $idempotency_key Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
 {
     my $params = {
     'email_message_data' => {
         data_type => 'EmailMessageData',
         description => 'Email data',
         required => '1',
+    },
+    'idempotency_key' => {
+        data_type => 'string',
+        description => 'Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'emails_post' } = {
@@ -402,6 +419,11 @@ sub emails_post {
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
 
+    # header params
+    if ( exists $args{'idempotency_key'}) {
+        $header_params->{'Idempotency-Key'} = $self->{api_client}->to_header_value($args{'idempotency_key'});
+    }
+
     my $_body_data;
     # body params
     if ( exists $args{'email_message_data'}) {
@@ -428,12 +450,18 @@ sub emails_post {
 # Send Transactional Email
 #
 # @param EmailTransactionalMessageData $email_transactional_message_data Email data (required)
+# @param string $idempotency_key Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. (optional)
 {
     my $params = {
     'email_transactional_message_data' => {
         data_type => 'EmailTransactionalMessageData',
         description => 'Email data',
         required => '1',
+    },
+    'idempotency_key' => {
+        data_type => 'string',
+        description => 'Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.',
+        required => '0',
     },
     };
     __PACKAGE__->method_documentation->{ 'emails_transactional_post' } = {
@@ -466,6 +494,11 @@ sub emails_transactional_post {
         $header_params->{'Accept'} = $_header_accept;
     }
     $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    # header params
+    if ( exists $args{'idempotency_key'}) {
+        $header_params->{'Idempotency-Key'} = $self->{api_client}->to_header_value($args{'idempotency_key'});
+    }
 
     my $_body_data;
     # body params
