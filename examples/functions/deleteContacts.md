@@ -1,7 +1,6 @@
-
 # Delete Contacts
 
-This guide will walk you through steps of deleting contact(s) from your account using the Perl library.
+This guide will walk you through steps of deleting several contacts from your account in one call using the Perl library. To delete one contact by its email address, see [deleteContact](deleteContact.md).
 
 *Required Access Level: ModifyContacts*
 
@@ -31,54 +30,58 @@ Load library using below line:
 use ElasticEmail::ContactsApi;
 ```
 
-Get client instance, generate and use your API key (remember to check a required access level): 
+Read your API key from the `ELASTICEMAIL_API_KEY` environment variable (remember to check a required access level) and get a client instance. The script stops with an error if the variable is not set:
 
 ```perl
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::ContactsApi->new(
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
 );
 ```
 
-Create an object with an array of contact to delete.
+> Find out more by checking our API's documentation: https://elasticemail.com/developers/api-documentation/rest-api#operation/contactsDeletePost
 
-> Find out more by checking our API's documentation: https://elasticemail.com/developers/api-documentation/rest-api#operation/contactsByEmailDelete
-
-Create an instance of CampaignsApi that will be used to create a campaign.
+Create an `EmailsPayload` object with the emails of the contacts to delete (load `ElasticEmail::Object::EmailsPayload` too):
 
 ```perl
-my $email = 'test@domain.com'; # string | Proper email address.
-$response = $apiInstance->contactsByEmailDelete($email);
+my $emails_payload = ElasticEmail::Object::EmailsPayload->new();
+$emails_payload->emails(['johnsmith@domain.com', 'johndoe@domain.com']);
 ```
-And finally, call `contacts_by_email_delete` method from the API to delete campaign: 
+
+And finally, call `contacts_delete_post` method from the API to delete the contacts:
 
 ```perl
-$api_instance->contacts_by_email_delete(email => $email);
+$api_instance->contacts_delete_post(emails_payload => $emails_payload);
 ```
 
 ## The whole code to copy and paste:
 ```perl
 use Data::Dumper;
+use ElasticEmail::Object::EmailsPayload;
 use ElasticEmail::ContactsApi;
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::ContactsApi->new(
 
     # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
 
-my $email = 'test@domain.com'; # string | Proper email address.
+my $emails_payload = ElasticEmail::Object::EmailsPayload->new(); # EmailsPayload | Provide either rule or a list of emails, not both.
+$emails_payload->emails(['johnsmith@domain.com', 'johndoe@domain.com']);
 
 eval {
-    $api_instance->contacts_by_email_delete(email => $email);
-    print Dumper('Contact deleted')
+    $api_instance->contacts_delete_post(emails_payload => $emails_payload);
+    print Dumper('Contacts deleted');
 };
 if ($@) {
-    warn "Exception when calling ContactsApi->contacts_by_email_delete: $@\n";
+    warn "Exception when calling ContactsApi->contacts_delete_post: $@\n";
 }
 ```
 
 ## Run the code
 ```
+export ELASTICEMAIL_API_KEY=your-api-key
 perl functions/deleteContacts.pl
 ```

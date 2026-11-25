@@ -5,10 +5,11 @@ use ElasticEmail::Object::CampaignRecipient;
 
 use ElasticEmail::Object::CampaignTemplate;
 use ElasticEmail::Object::CampaignOptions;
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::CampaignsApi->new(
 
     # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );

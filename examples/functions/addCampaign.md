@@ -38,11 +38,12 @@ use ElasticEmail::Object::CampaignOptions;
 use ElasticEmail::CampaignsApi;
 ```
 
-Get client instance, generate and use your API key (remember to check a required access level): 
+Read your API key from the `ELASTICEMAIL_API_KEY` environment variable (remember to check a required access level) and get a client instance. The script stops with an error if the variable is not set: 
 
 ```perl
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::CampaignsApi->new(
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
 );
 ```
 
@@ -93,10 +94,11 @@ use ElasticEmail::Object::CampaignRecipient;
 use ElasticEmail::Object::CampaignOptions;
 use ElasticEmail::CampaignsApi;
 
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::CampaignsApi->new(
 
     # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
@@ -133,5 +135,6 @@ if ($@) {
 
 ## Run the code
 ```
+export ELASTICEMAIL_API_KEY=your-api-key
 perl functions/addCampaign.pl
 ```

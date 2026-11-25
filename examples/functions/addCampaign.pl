@@ -7,10 +7,11 @@ use ElasticEmail::Object::CampaignOptions;
 
 use ElasticEmail::CampaignsApi;
 
+my $api_key = $ENV{ELASTICEMAIL_API_KEY} or die "Set the ELASTICEMAIL_API_KEY environment variable\n";
 my $api_instance = ElasticEmail::CampaignsApi->new(
 
     # Configure API key authorization: apikey
-    api_key => {'X-ElasticEmail-ApiKey' => 'YOUR_API_KEY'},
+    api_key => {'X-ElasticEmail-ApiKey' => $api_key},
     # uncomment below to setup prefix (e.g. Bearer) for API key, if needed
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
@@ -25,8 +26,8 @@ my $options = ElasticEmail::Object::CampaignOptions->new();
 my $template = ElasticEmail::Object::CampaignTemplate->new();
 
 $template->template_name('news!%$#$%:2022-03-21 13:02:14:2022-03-22 22:32:13 2022-03-22 10:32:22 PM');
-$template->reply_to('dagmara.tega@elasticemail.com');
-$template->from('dagmara.tega@elasticemail.com');
+$template->reply_to('myemail@domain.com');
+$template->from('myemail@domain.com');
 $template->subject('news!%$#$%:2022-03-21 13:02:14:2022-03-22 22:32:13');
 
 my $campaign = ElasticEmail::Object::Campaign->new(); # Campaign | JSON representation of a campaign

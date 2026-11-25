@@ -247,10 +247,12 @@ This repository also includes Perl snippets in [`examples/functions`](examples/f
 | [addSingleContact](examples/functions/addSingleContact.pl) | [readme](examples/functions/addSingleContact.md) |
 | [addTemplate](examples/functions/addTemplate.pl) | [readme](examples/functions/addTemplate.md) |
 | [deleteCampaign](examples/functions/deleteCampaign.pl) | [readme](examples/functions/deleteCampaign.md) |
+| [deleteContact](examples/functions/deleteContact.pl) | [readme](examples/functions/deleteContact.md) |
 | [deleteContacts](examples/functions/deleteContacts.pl) | [readme](examples/functions/deleteContacts.md) |
 | [deleteList](examples/functions/deleteList.pl) | [readme](examples/functions/deleteList.md) |
 | [deleteTemplate](examples/functions/deleteTemplate.pl) | [readme](examples/functions/deleteTemplate.md) |
 | [exportContacts](examples/functions/exportContacts.pl) | [readme](examples/functions/exportContacts.md) |
+| [loadCampaign](examples/functions/loadCampaign.pl) | [readme](examples/functions/loadCampaign.md) |
 | [loadCampaigns](examples/functions/loadCampaigns.pl) | [readme](examples/functions/loadCampaigns.md) |
 | [loadCampaignsStats](examples/functions/loadCampaignsStats.pl) | [readme](examples/functions/loadCampaignsStats.md) |
 | [loadChannelsStats](examples/functions/loadChannelsStats.pl) | [readme](examples/functions/loadChannelsStats.md) |
@@ -260,6 +262,7 @@ This repository also includes Perl snippets in [`examples/functions`](examples/f
 | [sendBulkEmails](examples/functions/sendBulkEmails.pl) | [readme](examples/functions/sendBulkEmails.md) |
 | [sendTransactionalEmails](examples/functions/sendTransactionalEmails.pl) | [readme](examples/functions/sendTransactionalEmails.md) |
 | [updateCampaign](examples/functions/updateCampaign.pl) | [readme](examples/functions/updateCampaign.md) |
+| [uploadContacts](examples/functions/uploadContacts.pl) | [readme](examples/functions/uploadContacts.md) |
 
 </details>
 
