@@ -14,6 +14,7 @@ my $api_instance = ElasticEmail::EmailsApi->new(
     #api_key_prefix => {'X-ElasticEmail-ApiKey' => 'Bearer'},
 );
 
+# README:BEGIN quickstart
 my $email_transactional_message_data = ElasticEmail::Object::EmailTransactionalMessageData->new(); # EmailTransactionalMessageData | Email data
 my $recipient = ElasticEmail::Object::TransactionalRecipient->new();
 
@@ -62,3 +63,4 @@ eval {
 if ($@) {
     warn "Exception when calling EmailsApi->emails_transactional_post: $@\n";
 }
+# README:END quickstart
